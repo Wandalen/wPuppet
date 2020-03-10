@@ -5,8 +5,17 @@ submodule :
   wTools :
     path : npm:///wTools
     enabled : 0 # submodule
+  wAppBasic :
+    path : npm:///wappbasic
+    enabled : 0 # submodule
   wCopyable :
     path : npm:///wCopyable
+    enabled : 0 # submodule
+  wLogger :
+    path : npm:///wLogger
+    enabled : 0 # submodule
+  wFiles :
+    path : npm:///wFiles
     enabled : 0 # submodule
   puppeteer :
     path : npm:///puppeteer
