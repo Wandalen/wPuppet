@@ -12,7 +12,7 @@ let Self = _.puppet;
 function _metaSetup()
 {
   if( !_.puppet.Strategies.Default )
-  _.puppet.Strategies.Default = _.puppet.Strategies.Pupeteer;
+  _.puppet.Strategies.Default = _.puppet.Strategies.Puppeteer;
   _.assert( !!_.puppet.Strategies.Default );
 }
 

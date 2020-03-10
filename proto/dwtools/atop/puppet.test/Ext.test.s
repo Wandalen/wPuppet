@@ -5,7 +5,7 @@
 if( typeof module !== 'undefined' )
 {
 
-  var Pupeteer = require( 'puppeteer' );
+  var Puppeteer = require( 'puppeteer' );
   var _ = require( '../../Tools.s' );
   _.include( 'wTesting' );
   // _.include( 'wStarter' );
@@ -97,7 +97,7 @@ async function basic( test )
 
 //
 
-async function pupeteerRaw( test )
+async function puppeteerRaw( test )
 {
   let self = this;
   let a = test.assetFor();
@@ -107,7 +107,7 @@ async function pupeteerRaw( test )
 
   try
   {
-    window = await Pupeteer.launch({ headless : true });
+    window = await Puppeteer.launch({ headless : true });
     page = await window.newPage();
 
     await page.goto( _.path.nativize( a.abs( 'Index.html' ) ), { waitUntil : 'load' } );
@@ -158,7 +158,7 @@ var Self =
   {
 
     basic,
-    pupeteerRaw,
+    puppeteerRaw,
 
   }
 

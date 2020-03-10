@@ -171,7 +171,7 @@ module:
           - ../proto/dwtools/atop/puppet/l3/System.s
           - ../proto/dwtools/atop/puppet/l3/Window.s
           - ../proto/dwtools/atop/puppet/l5_strategy
-          - ../proto/dwtools/atop/puppet/l5_strategy/Pupeteer.s
+          - ../proto/dwtools/atop/puppet/l5_strategy/Puppeteer.s
           - ../proto/dwtools/atop/puppet/l9
           - ../proto/dwtools/atop/puppet/l9/Namespace.s
           - ../proto/dwtools/atop/puppet.test

@@ -2,7 +2,7 @@
 
 'use strict';
 
-let Pupeteer = require( 'puppeteer' );
+let Puppeteer = require( 'puppeteer' );
 
 //
 

@@ -1,19 +1,19 @@
-( function _Pupeteer_s_( ) {
+( function _Puppeteer_s_( ) {
 
 'use strict';
 
-let Pupeteer = require( 'puppeteer' );
+let Puppeteer = require( 'puppeteer' );
 
 //
 
 let _ = _global_.wTools;
 let Parent = _.puppet.StrategyAbstract;
-let Self = function wPuppetStrategyPupeteer( o )
+let Self = function wPuppetStrategyPuppeteer( o )
 {
   return _.workpiece.construct( Self, this, arguments );
 }
 
-Self.shortName = 'Pupeteer';
+Self.shortName = 'Puppeteer';
 
 // --
 // inter
@@ -30,7 +30,7 @@ function _WindowForm( window )
   o2.headless = !!window.headless;
   o2.product  = window.browser || 'chrome';
 
-  return Pupeteer.launch( o2 );
+  return Puppeteer.launch( o2 );
 }
 
 //
