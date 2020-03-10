@@ -2,13 +2,13 @@
 {
   "name" : "wpuppet",
   "version" : "0.3.0",
-  "description" : "___",
+  "description" : "Browser puppet strategy",
   "author" : "Kostiantyn Wandalen <wanalen@willbe.so>",
   "license" : "MIT",
-  "main" : "proto/dwtools/___",
+  "main" : "proto/dwtools/atop/Main.s",
   "files" :
   [
-    "proto/dwtools/___",
+    "proto/dwtools/atop/pupper",
     "proto/dwtools/Tools.s"
   ],
   "scripts" :
@@ -27,7 +27,9 @@
   },
   "dependencies" :
   {
-    "wTools" : ""
+    "wTools" : "",
+    "wCopyable" : "",
+    "puppeteer" : ""
   },
   "devDependencies" :
   {

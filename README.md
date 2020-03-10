@@ -1,11 +1,10 @@
 
 # wPuppet [![Build Status](https://travis-ci.org/Wandalen/wPuppet.svg?branch=master)](https://travis-ci.org/Wandalen/wPuppet)
 
-___
+Browser puppet strategy
 
 ## Try out
 ```
 npm install
 node sample/Sample.js
 ```
-

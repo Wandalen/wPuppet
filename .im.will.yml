@@ -5,6 +5,12 @@ submodule :
   wTools :
     path : npm:///wTools
     enabled : 0 # submodule
+  wCopyable :
+    path : npm:///wCopyable
+    enabled : 0 # submodule
+  puppeteer :
+    path : npm:///puppeteer
+    enabled : 0 # submodule
 
 path :
 
@@ -41,7 +47,7 @@ path :
       content : prime
 
   entry.proto.no.tests :
-    path : proto/dwtools/___
+    path : proto/dwtools/atop/Main.s
     criterion :
       tests : 'no.tests'
   entry.proto.only.tests :
@@ -50,7 +56,7 @@ path :
       tests : 'only.tests'
 
   entry.out.raw.debug :
-    path : '{path::out.*=1}/source/dwtools/___'
+    path : '{path::out.*=1}/source/dwtools/atop/puppet.test/**'
     criterion :
       debug : [ debug, release ]
       raw : raw
@@ -219,4 +225,3 @@ build :
       - build::raw.release
       - build::release
       - build::npm
-

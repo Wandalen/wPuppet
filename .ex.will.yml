@@ -3,7 +3,7 @@
 about :
 
   name : 'wPuppet'
-  description : '___'
+  description : 'Browser puppet strategy'
   version : '0.4.0'
   enabled : 1
   interpreters :
@@ -92,4 +92,3 @@ build :
       # - build::npm
       - build::proto.export
       # - build::doc.export
-
