@@ -1,6 +1,6 @@
 {
   "name" : "wpuppet", 
-  "version" : "0.3.5", 
+  "version" : "0.3.6", 
   "description" : "Browser puppet strategy", 
   "author" : "Kostiantyn Wandalen <wanalen@willbe.so>", 
   "license" : "MIT", 
@@ -14,8 +14,8 @@
   }, 
   "dependencies" : 
   {
-    "wAppBasic" : "", 
     "wTools" : "alpha", 
+    "wappbasic" : "alpha", 
     "wCopyable" : "alpha", 
     "wLogger" : "alpha", 
     "wFiles" : "alpha", 

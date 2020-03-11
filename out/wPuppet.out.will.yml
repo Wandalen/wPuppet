@@ -2,15 +2,12 @@ format: outwillfile-2.0
 root:
   - wPuppet.out
 consistency:
-  wPuppet.out.will.yml: &ref_0
-    hash: b3bfe82db8e142c5c4e4592c47c677dd
-    size: 39485
-  ../.ex.will.yml: &ref_1
+  ../.ex.will.yml: &ref_0
     hash: f950bd142f5b2199da2374112c19ecf2
     size: 1673
-  ../.im.will.yml: &ref_2
-    hash: 1379920bf3e3fa6efb8995a294d28486
-    size: 4923
+  ../.im.will.yml: &ref_1
+    hash: 12118145de1ea18aa763a30283903579
+    size: 5125
 module:
   wPuppet.out:
     about:
@@ -19,19 +16,19 @@ module:
       description: Browser puppet strategy
       enabled: 1
       version: 0.4.0
-      interpreters:
+      interpreters: &ref_2
         - njs >= 8.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
+      keywords: &ref_3
         - tools
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors:
+      contributors: &ref_4
         - Kostiantyn Wandalen <wanalen@willbe.so>
       npm.name: wpuppet
-      npm.scripts:
+      npm.scripts: &ref_5
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -211,6 +208,18 @@ module:
         path: 'npm:///puppeteer'
         autoExporting: 0
         enabled: 0
+      wpuppet:
+        path: 'hd://..'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
+      wTesting:
+        path: 'npm:///wTesting'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
     reflector:
       reflect.proto.debug.raw:
         src:
@@ -726,24 +735,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          reflector: 'reflector::exported.proto.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          reflector: 'reflector::exported.files.proto.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -832,9 +823,8 @@ module:
           content: proto
           export: 1
     consistency:
-      wPuppet.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wPuppet
@@ -842,21 +832,13 @@ module:
       description: Browser puppet strategy
       enabled: 1
       version: 0.4.0
-      interpreters:
-        - njs >= 8.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - tools
-        - wTools
+      interpreters: *ref_2
+      keywords: *ref_3
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@willbe.so>
+      contributors: *ref_4
       npm.name: wpuppet
-      npm.scripts:
-        test: wtest .run proto/**
-        docgen: wdocgen .build proto
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
@@ -986,6 +968,18 @@ module:
         path: 'npm:///puppeteer'
         autoExporting: 0
         enabled: 0
+      wpuppet:
+        path: 'hd://.'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
+      wTesting:
+        path: 'npm:///wTesting'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
     reflector:
       reflect.proto.debug.raw:
         src:
@@ -1530,6 +1524,5 @@ module:
         hash: f950bd142f5b2199da2374112c19ecf2
         size: 1673
       ../.im.will.yml:
-        hash: 1379920bf3e3fa6efb8995a294d28486
-        size: 4923
-      wPuppet.out.will.yml: *ref_0
+        hash: 12118145de1ea18aa763a30283903579
+        size: 5125
