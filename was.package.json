@@ -15,7 +15,7 @@
   "dependencies" : 
   {
     "wTools" : "", 
-    "wAppBasic" : "", 
+    "wappbasic" : "", 
     "wCopyable" : "", 
     "wLogger" : "", 
     "wFiles" : "", 
