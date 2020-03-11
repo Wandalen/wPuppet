@@ -77,7 +77,7 @@ function PageForm( page )
   return _.Consequence.Try( () =>
   {
     _.assert( !page._handle );
-    _.assert( _.strDefined( page.pagePath ) );
+    // _.assert( _.strDefined( page.pagePath ) );
     return this._PageForm( page );
   })
   .then( ( handle ) =>
@@ -90,6 +90,22 @@ function PageForm( page )
     logger.log( _.errOnce( err ) );
     throw err;
   });
+}
+
+//
+
+function PageGoto( page, pagePath )
+{
+  let sys = page.system;
+  let window = page.window;
+  let logger = sys.logger;
+
+  return _.Consequence.Try( () =>
+  {
+    _.assert( _.strDefined( pagePath ) );
+    _.assert( arguments.length === 2 );
+    return this._PageGoto( page, pagePath );
+  })
 }
 
 //
@@ -172,6 +188,22 @@ function PageSelectFirstEval( page, selector, routine, ... args )
   })
 }
 
+//
+
+function PageOn( page, eventName, ... args )
+{
+  let sys = page.system;
+  let window = page.window;
+  let logger = sys.logger;
+
+  return _.Consequence.Try( () =>
+  {
+    _.assert( _.strIs( eventName ) );
+    _.assert( arguments.length >= 2 );
+    return this._PageOn( page, eventName, ... args );
+  })
+}
+
 // --
 // relations
 // --
@@ -199,6 +231,9 @@ let Statics =
   WindowForm,
   _WindowUnform : null,
   WindowUnform,
+  
+  _PageGoto : null,
+  PageGoto,
 
   _PageForm : null,
   PageForm,
@@ -214,7 +249,8 @@ let Statics =
   PageSelectEval,
   _PageSelectFirstEval : null,
   PageSelectFirstEval,
-
+  _PageOn : null,
+  PageOn,
 }
 
 let Forbids =
@@ -237,6 +273,9 @@ let Proto =
 
   _PageForm : null,
   PageForm,
+  
+  _PageGoto : null,
+  PageGoto,
 
   _PageSelect : null,
   PageSelect,
@@ -249,6 +288,8 @@ let Proto =
   PageSelectEval,
   _PageSelectFirstEval : null,
   PageSelectFirstEval,
+  _PageOn : null,
+  PageOn,
 
   // ident
 

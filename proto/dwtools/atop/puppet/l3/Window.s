@@ -121,7 +121,7 @@ function pageOpen()
   let sys = window.system;
   _.assert( arguments.length === 0 || arguments.length === 1 );
   let page = new _.puppet.Page({ system : sys, window : window });
-  return page;
+  return page.form();
 }
 
 // --
