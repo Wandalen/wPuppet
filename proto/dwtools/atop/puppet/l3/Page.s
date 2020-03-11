@@ -72,7 +72,7 @@ function form()
   _.assert( !page.formed );
   _.assert( page.window instanceof _.puppet.Window );
   _.assert( page.system instanceof _.puppet.System );
-  _.assert( _.strDefined( page.pagePath ) );
+  // _.assert( _.strDefined( page.pagePath ) );
 
   return strategy.PageForm( page )
   .then( ( arg ) =>
@@ -87,14 +87,16 @@ function form()
 function goto( pagePath )
 {
   let page = this;
-
+  let sys = page.system;
+  let strategy = sys.strategy;
+  
   _.assert( _.strDefined( pagePath ) );
   _.assert( arguments.length === 1 );
-  _.assert( !page.formed );
+  _.assert( page.formed );
 
   page.pagePath = pagePath;
-
-  return page.form();
+ 
+  return strategy.PageGoto( page, pagePath );
 }
 
 //
@@ -150,6 +152,17 @@ function eval_()
   let strategy = sys.strategy;
   _.assert( arguments.length >= 1 );
   return strategy.PageEval( page, ... arguments );
+}
+
+//
+
+function on()
+{
+  let page = this;
+  let sys = page.system;
+  let strategy = sys.strategy;
+  _.assert( arguments.length >= 1 );
+  return strategy.PageOn( page, ... arguments );
 }
 
 // --
@@ -208,6 +221,7 @@ let Proto =
   selectEval,
   selectFirstEval,
   eval : eval_,
+  on,
 
   // ident
 

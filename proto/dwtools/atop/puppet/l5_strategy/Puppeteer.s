@@ -60,13 +60,25 @@ function _PageForm( page )
   .then( ( handle ) =>
   {
     page._handle = handle;
-    return handle.goto( page.pagePath, { waitUntil : 'load' } )
-  })
-  .then( ( handle ) =>
-  {
+    // return handle.goto( page.pagePath, { waitUntil : 'load' } )
     return page._handle;
   })
+  // .then( ( handle ) =>
+  // {
+  //   return page._handle;
+  // })
 
+}
+
+//
+
+function _PageGoto( page, pagePath )
+{
+  let sys = page.system;
+  let window = page.window;
+  let logger = sys.logger;
+  page.pagePath = pagePath;
+  return page._handle.goto( page.pagePath, { waitUntil : 'load' } )
 }
 
 //
@@ -120,6 +132,17 @@ function _PageSelectFirstEval( page, selector, routine, ... args )
   return page._handle.$eval( selector, routine, ... args );
 }
 
+//
+
+function _PageOn( page, eventName, ... args )
+{
+  let sys = page.system;
+  let window = page.window;
+  let logger = sys.logger;
+  debugger
+  return page._handle.on( eventName, ... args );
+}
+
 // --
 // relations
 // --
@@ -145,11 +168,13 @@ let Statics =
   _WindowForm,
   _WindowUnform,
   _PageForm,
+  _PageGoto,
   _PageSelect,
   _PageSelectFirst,
   _PageEval,
   _PageSelectEval,
   _PageSelectFirstEval,
+  _PageOn
 }
 
 let Forbids =
@@ -166,11 +191,13 @@ let Proto =
   _WindowForm,
   _WindowUnform,
   _PageForm,
+  _PageGoto,
   _PageSelect,
   _PageSelectFirst,
   _PageEval,
   _PageSelectEval,
   _PageSelectFirstEval,
+  _PageOn,
 
   // ident
 
