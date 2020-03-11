@@ -20,6 +20,16 @@ submodule :
   puppeteer :
     path : npm:///puppeteer
     enabled : 0 # submodule
+  wpuppet :
+    path : hd://.
+    enabled : 0 # submodule
+    criterion :
+      development : 1
+  wTesting :
+    path : npm:///wTesting
+    enabled : 0 # submodule
+    criterion :
+      development : 1
 
 path :
 
