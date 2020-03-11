@@ -2,10 +2,13 @@ format: outwillfile-2.0
 root:
   - wPuppet.out
 consistency:
-  ../.ex.will.yml: &ref_0
+  wPuppet.out.will.yml: &ref_0
+    hash: e4b20f21c75fab8de6ad5b44d4433500
+    size: 40010
+  ../.ex.will.yml: &ref_1
     hash: f950bd142f5b2199da2374112c19ecf2
     size: 1673
-  ../.im.will.yml: &ref_1
+  ../.im.will.yml: &ref_2
     hash: 12118145de1ea18aa763a30283903579
     size: 5125
 module:
@@ -16,19 +19,19 @@ module:
       description: Browser puppet strategy
       enabled: 1
       version: 0.4.0
-      interpreters: &ref_2
+      interpreters:
         - njs >= 8.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_3
+      keywords:
         - tools
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors: &ref_4
+      contributors:
         - Kostiantyn Wandalen <wanalen@willbe.so>
       npm.name: wpuppet
-      npm.scripts: &ref_5
+      npm.scripts:
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -735,6 +738,24 @@ module:
           content: prime
         inherit:
           - files.transpile
+      exported.proto.export:
+        opts:
+          reflector: 'reflector::exported.proto.export*'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.files.proto.export:
+        opts:
+          reflector: 'reflector::exported.files.proto.export*'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
     build:
       proto.export:
         steps:
@@ -823,8 +844,9 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      wPuppet.out.will.yml: *ref_0
+      ../.ex.will.yml: *ref_1
+      ../.im.will.yml: *ref_2
   ../:
     about:
       name: wPuppet
@@ -832,13 +854,21 @@ module:
       description: Browser puppet strategy
       enabled: 1
       version: 0.4.0
-      interpreters: *ref_2
-      keywords: *ref_3
+      interpreters:
+        - njs >= 8.0.0
+        - chrome >= 60.0.0
+        - firefox >= 60.0.0
+      keywords:
+        - tools
+        - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors: *ref_4
+      contributors:
+        - Kostiantyn Wandalen <wanalen@willbe.so>
       npm.name: wpuppet
-      npm.scripts: *ref_5
+      npm.scripts:
+        test: wtest .run proto/**
+        docgen: wdocgen .build proto
     path:
       module.willfiles:
         criterion:
@@ -1526,3 +1556,6 @@ module:
       ../.im.will.yml:
         hash: 12118145de1ea18aa763a30283903579
         size: 5125
+      wPuppet.out.will.yml:
+        hash: e4b20f21c75fab8de6ad5b44d4433500
+        size: 40010
