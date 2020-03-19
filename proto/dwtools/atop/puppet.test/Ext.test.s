@@ -97,6 +97,47 @@ async function basic( test )
 
 //
 
+async function onConsole( test )
+{
+  let self = this;
+  let a = test.assetFor( 'basic');
+  var page, window;
+
+  a.reflect();
+
+  try
+  {
+    window = await _.puppet.windowOpen({ headless : true });
+    page = await window.pageOpen();
+
+    let output = '';
+
+    await page.on( 'console', ( msg ) =>
+    {
+      output += msg.text();
+    })
+
+    await page.goto( `file://${_.path.nativize( a.abs( 'Index.html' ) )}` );
+
+    await page.eval( () =>
+    {
+      console.log( 'Hello world' );
+    });
+
+    test.is( _.strHas( output, 'Hello world' ) );
+
+    await window.close();
+  }
+  catch( err )
+  {
+    test.exceptionReport({ err });
+    await window.close();
+  }
+
+}
+
+//
+
 async function puppeteerRaw( test )
 {
   let self = this;
@@ -158,6 +199,7 @@ var Self =
   {
 
     basic,
+    onConsole,
     puppeteerRaw,
 
   }
