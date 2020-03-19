@@ -17,6 +17,9 @@ submodule :
   wFiles :
     path : npm:///wFiles
     enabled : 0 # submodule
+  wEventHandler :
+    path : npm:///wEventHandler
+    enabled : 0 # submodule
   puppeteer :
     path : npm:///puppeteer
     enabled : 0 # submodule
