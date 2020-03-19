@@ -72,9 +72,9 @@ async function basic( test )
     window = await _.puppet.windowOpen({ headless : true });
     page = await window.pageOpen();
 
-    await page.goto( _.path.nativize( a.abs( 'Index.html' ) ) );
+    await page.goto( `file://${_.path.nativize( a.abs( 'Index.html' ) )}` );
 
-    var exp = [ `file:///${_.path.nativize( a.abs( 'Index.js' ) )}`.replace( /\\/g, '/' ), `` ]
+    var exp = [ `file://${_.path.nativize( a.abs( 'Index.js' ) )}`.replace( /\\/g, '/' ), `` ]
     var got = await page.selectEval( 'script', ( scripts ) => scripts.map( ( s ) => s.src ) );
     test.identical( got, exp );
 
@@ -110,9 +110,9 @@ async function puppeteerRaw( test )
     window = await Puppeteer.launch({ headless : true });
     page = await window.newPage();
 
-    await page.goto( _.path.nativize( a.abs( 'Index.html' ) ), { waitUntil : 'load' } );
+    await page.goto( `file://${_.path.nativize( a.abs( 'Index.html' ) )}`, { waitUntil : 'load' } );
 
-    var exp = [ `file:///${_.path.nativize( a.abs( 'Index.js' ) )}`.replace( /\\/g, '/' ), `` ]
+    var exp = [ `file://${_.path.nativize( a.abs( 'Index.js' ) )}`.replace( /\\/g, '/' ), `` ]
     var got = await page.$$eval( 'script', ( scripts ) => scripts.map( ( s ) => s.src ) );
     test.identical( got, exp );
 
