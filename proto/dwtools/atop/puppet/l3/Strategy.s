@@ -190,7 +190,7 @@ function PageSelectFirstEval( page, selector, routine, ... args )
 
 //
 
-function PageOn( page, eventName, ... args )
+function PageEventHandlerRegister( page, kind )
 {
   let sys = page.system;
   let window = page.window;
@@ -198,9 +198,9 @@ function PageOn( page, eventName, ... args )
 
   return _.Consequence.Try( () =>
   {
-    _.assert( _.strIs( eventName ) );
-    _.assert( arguments.length >= 2 );
-    return this._PageOn( page, eventName, ... args );
+    _.assert( _.strIs( kind ) );
+    _.assert( arguments.length === 2 );
+    return this._PageEventHandlerRegister( page, kind );
   })
 }
 
@@ -231,7 +231,7 @@ let Statics =
   WindowForm,
   _WindowUnform : null,
   WindowUnform,
-  
+
   _PageGoto : null,
   PageGoto,
 
@@ -249,8 +249,8 @@ let Statics =
   PageSelectEval,
   _PageSelectFirstEval : null,
   PageSelectFirstEval,
-  _PageOn : null,
-  PageOn,
+  _PageEventHandlerRegister : null,
+  PageEventHandlerRegister,
 }
 
 let Forbids =
@@ -273,7 +273,7 @@ let Proto =
 
   _PageForm : null,
   PageForm,
-  
+
   _PageGoto : null,
   PageGoto,
 
@@ -288,8 +288,8 @@ let Proto =
   PageSelectEval,
   _PageSelectFirstEval : null,
   PageSelectFirstEval,
-  _PageOn : null,
-  PageOn,
+  _PageEventHandlerRegister : null,
+  PageEventHandlerRegister,
 
   // ident
 

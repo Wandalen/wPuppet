@@ -89,13 +89,13 @@ function goto( pagePath )
   let page = this;
   let sys = page.system;
   let strategy = sys.strategy;
-  
+
   _.assert( _.strDefined( pagePath ) );
   _.assert( arguments.length === 1 );
   _.assert( page.formed );
 
   page.pagePath = pagePath;
- 
+
   return strategy.PageGoto( page, pagePath );
 }
 
@@ -156,13 +156,19 @@ function eval_()
 
 //
 
-function on()
+function _eventHandlerRegister( o )
 {
   let page = this;
   let sys = page.system;
   let strategy = sys.strategy;
-  _.assert( arguments.length >= 1 );
-  return strategy.PageOn( page, ... arguments );
+
+  _.assert( arguments.length === 1, 'Expects single argument' );
+  _.assert( _.routineIs( o.onHandle ) );
+
+  let srcOnHandle = o.onHandle;
+  o.onHandle = ( e ) => srcOnHandle.apply( srcOnHandle, e.args );
+  _.EventHandler.prototype._eventHandlerRegister.call( page, o );
+  return strategy.PageEventHandlerRegister( page, o.kind );
 }
 
 // --
@@ -199,6 +205,11 @@ let Forbids =
   sys : 'sys',
 }
 
+let Events =
+{
+  console : 'console'
+}
+
 // --
 // declare
 // --
@@ -221,7 +232,10 @@ let Proto =
   selectEval,
   selectFirstEval,
   eval : eval_,
-  on,
+
+  // event
+
+  _eventHandlerRegister,
 
   // ident
 
@@ -231,6 +245,7 @@ let Proto =
   Restricts,
   Statics,
   Forbids,
+  Events
 
 }
 
@@ -244,6 +259,7 @@ _.classDeclare
 });
 
 _.Copyable.mixin( Self );
+_.EventHandler.mixin( Self );
 
 //
 
