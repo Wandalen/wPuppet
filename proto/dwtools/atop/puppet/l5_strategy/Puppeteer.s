@@ -78,6 +78,7 @@ function _PageGoto( page, pagePath )
   let window = page.window;
   let logger = sys.logger;
   page.pagePath = pagePath;
+
   return page._handle.goto( page.pagePath, { waitUntil : 'load' } )
 }
 
@@ -134,13 +135,18 @@ function _PageSelectFirstEval( page, selector, routine, ... args )
 
 //
 
-function _PageOn( page, eventName, ... args )
+function _PageEventHandlerRegister( page, kind )
 {
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
-  debugger
-  return page._handle.on( eventName, ... args );
+
+  _.assert( Events[ kind ] !== undefined, `Event ${kind} support is not implemented` );
+
+  return page._handle.on( kind, function( ...args )
+  {
+    page.eventGive({ kind, args })
+  });
 }
 
 // --
@@ -174,11 +180,16 @@ let Statics =
   _PageEval,
   _PageSelectEval,
   _PageSelectFirstEval,
-  _PageOn
+  _PageEventHandlerRegister
 }
 
 let Forbids =
 {
+}
+
+let Events =
+{
+  console : 'console'
 }
 
 // --
@@ -197,7 +208,7 @@ let Proto =
   _PageEval,
   _PageSelectEval,
   _PageSelectFirstEval,
-  _PageOn,
+  _PageEventHandlerRegister,
 
   // ident
 
@@ -207,6 +218,7 @@ let Proto =
   Restricts,
   Statics,
   Forbids,
+  Events
 
 }
 
