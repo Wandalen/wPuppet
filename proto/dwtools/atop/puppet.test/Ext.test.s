@@ -192,7 +192,7 @@ var Self =
   {
     suiteTempPath : null,
     assetsOriginalSuitePath : null,
-    execJsPath : null,
+    appJsPath : null,
   },
 
   tests :
