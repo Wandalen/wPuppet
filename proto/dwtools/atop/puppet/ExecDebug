@@ -1,8 +1,8 @@
-#!/usr/bin/env node
+#! /usr/bin/env node
 
 if( typeof module !== 'undefined' )
 {
-  let _ = require( '../../../../dwtools/Tools.s' );
+  let _ = require( '../../../dwtools/Tools.s' );
   _.include( 'wAppBasic' );
 }
 
