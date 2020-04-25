@@ -1,6 +1,6 @@
 {
   "name" : "wpuppet", 
-  "version" : "0.3.24", 
+  "version" : "0.3.25", 
   "description" : "Browser puppet strategy", 
   "author" : "Kostiantyn Wandalen <wanalen@willbe.so>", 
   "license" : "MIT", 
