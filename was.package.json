@@ -1,27 +1,27 @@
 {
-  "name" : "wpuppet", 
-  "version" : "0.3.26", 
-  "description" : "Browser puppet strategy", 
-  "author" : "Kostiantyn Wandalen <wanalen@willbe.so>", 
-  "license" : "MIT", 
-  "main" : "proto/dwtools/atop/puppet/Main.s", 
-  "files" : [ "proto/dwtools/atop/puppet", "proto/dwtools/Tools.s" ], 
-  "scripts" : { "test" : "wtest .run proto", "docgen" : "wdocgen .build proto" }, 
-  "repository" : { "type" : "git", "url" : "https ://github.com/Wandalen/wPuppet.git" }, 
-  "bugs" : 
+  "name" : "wpuppet",
+  "version" : "0.3.27",
+  "description" : "Browser puppet strategy",
+  "author" : "Kostiantyn Wandalen <wanalen@willbe.so>",
+  "license" : "MIT",
+  "main" : "proto/dwtools/atop/puppet/Main.s",
+  "files" : [ "proto/dwtools/atop/puppet", "proto/dwtools/Tools.s" ],
+  "scripts" : { "test" : "wtest .run proto", "docgen" : "wdocgen .build proto" },
+  "repository" : { "type" : "git", "url" : "https ://github.com/Wandalen/wPuppet.git" },
+  "bugs" :
   {
     "url" : "https ://github.com/Wandalen/wPuppet/issues"
-  }, 
-  "dependencies" : 
+  },
+  "dependencies" :
   {
-    "wTools" : "", 
-    "wappbasic" : "", 
-    "wCopyable" : "", 
-    "wLogger" : "", 
-    "wFiles" : "", 
-    "wEventHandler" : "", 
+    "wTools" : "",
+    "wappbasic" : "",
+    "wCopyable" : "",
+    "wLogger" : "",
+    "wFiles" : "",
+    "wEventHandler" : "",
     "puppeteer" : ""
-  }, 
-  "devDependencies" : { "wTesting" : "" }, 
+  },
+  "devDependencies" : { "wTesting" : "" },
   "keywords" : [ "wTools" ]
 }
