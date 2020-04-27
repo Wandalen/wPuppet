@@ -1,6 +1,6 @@
 {
   "name" : "wpuppet",
-  "version" : "0.3.27",
+  "version" : "0.3.28",
   "description" : "Browser puppet strategy",
   "author" : "Kostiantyn Wandalen <wanalen@willbe.so>",
   "license" : "MIT",
@@ -14,14 +14,14 @@
   },
   "dependencies" :
   {
-    "wTools" : "gamma",
-    "wappbasic" : "gamma",
-    "wCopyable" : "gamma",
-    "wLogger" : "gamma",
-    "wFiles" : "gamma",
-    "wEventHandler" : "gamma",
+    "wTools" : "beta",
+    "wappbasic" : "beta",
+    "wCopyable" : "beta",
+    "wLogger" : "beta",
+    "wFiles" : "beta",
+    "wEventHandler" : "beta",
     "puppeteer" : "3.0.1"
   },
-  "devDependencies" : { "wTesting" : "gamma" },
+  "devDependencies" : { "wTesting" : "beta" },
   "keywords" : [ "wTools" ]
 }
