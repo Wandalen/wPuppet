@@ -315,7 +315,7 @@ _.Copyable.mixin( Self );
 
 //
 
-if( typeof module !== 'undefined' && module !== null )
+if( typeof module !== 'undefined' )
 module[ 'exports' ] = Self;
 wTools.puppet[ Self.shortName ] = Self;
 

@@ -233,7 +233,7 @@ _.classDeclare
 
 //
 
-if( typeof module !== 'undefined' && module !== null )
+if( typeof module !== 'undefined' )
 module[ 'exports' ] = Self;
 
 wTools.puppet.strategyAdd( Self );
