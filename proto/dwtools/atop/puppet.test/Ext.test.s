@@ -25,10 +25,10 @@ function onSuiteBegin()
   let self = this;
 
   self.suiteTempPath = _.path.pathDirTempOpen( _.path.join( __dirname, '../..'  ), 'Puppet' );
-  self.assetsOriginalSuitePath = _.path.join( __dirname, '_assets' );
+  self.assetsOriginalPath = _.path.join( __dirname, '_assets' );
 
   // self.suiteTempPath = path.pathDirTempOpen( path.join( __dirname, '../..'  ), 'err' );
-  // self.assetsOriginalSuitePath = path.join( __dirname, '_assets' );
+  // self.assetsOriginalPath = path.join( __dirname, '_assets' );
 
   // self.find = _.fileProvider.filesFinder
   // ({
@@ -191,7 +191,7 @@ var Self =
   context :
   {
     suiteTempPath : null,
-    assetsOriginalSuitePath : null,
+    assetsOriginalPath : null,
     appJsPath : null,
   },
 
