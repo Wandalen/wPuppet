@@ -5,8 +5,8 @@ submodule :
   wTools :
     path : npm:///wTools
     enabled : 0 # submodule
-  wAppBasic :
-    path : npm:///wappbasic
+  wProcess :
+    path : npm:///wprocess
     enabled : 0 # submodule
   wCopyable :
     path : npm:///wCopyable

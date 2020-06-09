@@ -15,7 +15,7 @@
   "dependencies" :
   {
     "wTools" : "alpha",
-    "wappbasic" : "alpha",
+    "wprocess" : "alpha",
     "wCopyable" : "alpha",
     "wLogger" : "alpha",
     "wFiles" : "alpha",

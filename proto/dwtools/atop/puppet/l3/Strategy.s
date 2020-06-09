@@ -6,7 +6,8 @@
 
 let _ = _global_.wTools;
 let Parent = null;
-let Self = function wPuppetStrategyAbstract( o )
+let Self = wPuppetStrategyAbstract;
+function wPuppetStrategyAbstract( o )
 {
   return _.workpiece.construct( Self, this, arguments );
 }

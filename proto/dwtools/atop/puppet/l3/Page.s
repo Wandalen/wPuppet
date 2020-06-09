@@ -6,7 +6,8 @@
 
 let _ = _global_.wTools;
 let Parent = null;
-let Self = function wPuppetPage( o )
+let Self = wPuppetPage;
+function wPuppetPage( o )
 {
   return _.workpiece.construct( Self, this, arguments );
 }
