@@ -3,8 +3,8 @@ root:
   - wPuppet.out
 consistency:
   ../.ex.will.yml: &ref_0
-    hash: 38f7798085fea8f76ae1064148b98739
-    size: 1673
+    hash: c20bf43e91ab4a648f2be03e50f74a5f
+    size: 1674
   ../.im.will.yml: &ref_1
     hash: 81a84d64b6d8d61c49e25d96db5cf030
     size: 5201
@@ -1512,8 +1512,8 @@ module:
           - 'build::npm'
     consistency:
       ../.ex.will.yml:
-        hash: 38f7798085fea8f76ae1064148b98739
-        size: 1673
+        hash: c20bf43e91ab4a648f2be03e50f74a5f
+        size: 1674
       ../.im.will.yml:
         hash: 81a84d64b6d8d61c49e25d96db5cf030
         size: 5201
