@@ -6,7 +6,7 @@
   "license" : "MIT",
   "main" : "proto/dwtools/atop/puppet/Main.s",
   "files" : [ "proto/dwtools/atop/puppet", "proto/dwtools/Tools.s" ],
-  "scripts" : { "test" : "wtest .run proto rapidity:-3", "docgen" : "wdocgen .build proto" },
+  "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen .build proto" },
   "repository" : { "type" : "git", "url" : "https ://github.com/Wandalen/wPuppet.git" },
   "bugs" :
   {
