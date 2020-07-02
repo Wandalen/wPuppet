@@ -3,4 +3,5 @@
 let Self = require( './Main.s' );
 if( typeof module !== 'undefined' )
 module[ 'exports' ] = Self;
-Self.Exec();
+Self.starter.Center.Exec();
+
