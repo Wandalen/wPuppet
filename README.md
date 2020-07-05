@@ -1,5 +1,5 @@
 
-# wPuppet [![Build Status](https://travis-ci.org/Wandalen/wPuppet.svg?branch=master)](https://travis-ci.org/Wandalen/wPuppet)
+# module::Puppet [![Status](https://github.com/Wandalen/wPuppet/workflows/Test/badge.svg)](https://github.com/Wandalen/wPuppet}/actions?query=workflow%3ATest)
 
 Browser puppet strategy
 
