@@ -6,7 +6,7 @@ if( typeof module !== 'undefined' )
 {
 
   var Puppeteer = require( 'puppeteer' );
-  var _ = require( '../../../dwtools/Tools.s' );
+  var _ = require( '../../../wtools/Tools.s' );
   _.include( 'wTesting' );
   // _.include( 'wStarter' );
   require( '../puppet/Include.s' );

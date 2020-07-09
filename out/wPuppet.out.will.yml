@@ -109,7 +109,7 @@ module:
       entry.proto.no.tests:
         criterion:
           tests: no.tests
-        path: ../proto/dwtools/atop/Main.s
+        path: ../proto/wtools/atop/Main.s
       entry.proto.only.tests:
         criterion:
           tests: only.tests
@@ -119,13 +119,13 @@ module:
           debug: debug
           raw: raw
           content: prime
-        path: '{path::out.*=1}/source/dwtools/atop/puppet.test/**'
+        path: '{path::out.*=1}/source/wtools/atop/puppet.test/**'
       entry.out.raw.debug.release:
         criterion:
           debug: release
           raw: raw
           content: prime
-        path: '{path::out.*=1}/source/dwtools/atop/puppet.test/**'
+        path: '{path::out.*=1}/source/wtools/atop/puppet.test/**'
       entry.out.compiled.debug.debug:
         criterion:
           debug: debug
@@ -152,41 +152,41 @@ module:
         path:
           - ../proto
           - ../proto/Integration.test.s
-          - ../proto/dwtools
-          - ../proto/dwtools/Tools.s
-          - ../proto/dwtools/abase
-          - ../proto/dwtools/amid
-          - ../proto/dwtools/atop
-          - ../proto/dwtools/atop/puppet
-          - ../proto/dwtools/atop/puppet/Exec
-          - ../proto/dwtools/atop/puppet/ExecDebug
-          - ../proto/dwtools/atop/puppet/ExecUnrestricted
-          - ../proto/dwtools/atop/puppet/Include.s
-          - ../proto/dwtools/atop/puppet/Main.s
-          - ../proto/dwtools/atop/puppet/include
-          - ../proto/dwtools/atop/puppet/include/Base.s
-          - ../proto/dwtools/atop/puppet/include/Mid.s
-          - ../proto/dwtools/atop/puppet/include/Top.s
-          - ../proto/dwtools/atop/puppet/l1
-          - ../proto/dwtools/atop/puppet/l1/Namespace.s
-          - ../proto/dwtools/atop/puppet/l3
-          - ../proto/dwtools/atop/puppet/l3/Page.s
-          - ../proto/dwtools/atop/puppet/l3/Strategy.s
-          - ../proto/dwtools/atop/puppet/l3/System.s
-          - ../proto/dwtools/atop/puppet/l3/Window.s
-          - ../proto/dwtools/atop/puppet/l5_strategy
-          - ../proto/dwtools/atop/puppet/l5_strategy/Puppeteer.s
-          - ../proto/dwtools/atop/puppet/l9
-          - ../proto/dwtools/atop/puppet/l9/Namespace.s
-          - ../proto/dwtools/atop/puppet.test
-          - ../proto/dwtools/atop/puppet.test/Ext.test.s
-          - ../proto/dwtools/atop/puppet.test/_assets
-          - ../proto/dwtools/atop/puppet.test/_assets/basic
-          - ../proto/dwtools/atop/puppet.test/_assets/basic/Index.html
-          - ../proto/dwtools/atop/puppet.test/_assets/basic/Index.js
-          - ../proto/dwtools/atop/puppet.test/_assets/puppeteerRaw
-          - ../proto/dwtools/atop/puppet.test/_assets/puppeteerRaw/Index.html
-          - ../proto/dwtools/atop/puppet.test/_assets/puppeteerRaw/Index.js
+          - ../proto/wtools
+          - ../proto/wtools/Tools.s
+          - ../proto/wtools/abase
+          - ../proto/wtools/amid
+          - ../proto/wtools/atop
+          - ../proto/wtools/atop/puppet
+          - ../proto/wtools/atop/puppet/Exec
+          - ../proto/wtools/atop/puppet/ExecDebug
+          - ../proto/wtools/atop/puppet/ExecUnrestricted
+          - ../proto/wtools/atop/puppet/Include.s
+          - ../proto/wtools/atop/puppet/Main.s
+          - ../proto/wtools/atop/puppet/include
+          - ../proto/wtools/atop/puppet/include/Base.s
+          - ../proto/wtools/atop/puppet/include/Mid.s
+          - ../proto/wtools/atop/puppet/include/Top.s
+          - ../proto/wtools/atop/puppet/l1
+          - ../proto/wtools/atop/puppet/l1/Namespace.s
+          - ../proto/wtools/atop/puppet/l3
+          - ../proto/wtools/atop/puppet/l3/Page.s
+          - ../proto/wtools/atop/puppet/l3/Strategy.s
+          - ../proto/wtools/atop/puppet/l3/System.s
+          - ../proto/wtools/atop/puppet/l3/Window.s
+          - ../proto/wtools/atop/puppet/l5_strategy
+          - ../proto/wtools/atop/puppet/l5_strategy/Puppeteer.s
+          - ../proto/wtools/atop/puppet/l9
+          - ../proto/wtools/atop/puppet/l9/Namespace.s
+          - ../proto/wtools/atop/puppet.test
+          - ../proto/wtools/atop/puppet.test/Ext.test.s
+          - ../proto/wtools/atop/puppet.test/_assets
+          - ../proto/wtools/atop/puppet.test/_assets/basic
+          - ../proto/wtools/atop/puppet.test/_assets/basic/Index.html
+          - ../proto/wtools/atop/puppet.test/_assets/basic/Index.js
+          - ../proto/wtools/atop/puppet.test/_assets/puppeteerRaw
+          - ../proto/wtools/atop/puppet.test/_assets/puppeteerRaw/Index.html
+          - ../proto/wtools/atop/puppet.test/_assets/puppeteerRaw/Index.js
     submodule:
       wTools:
         path: 'npm:///wTools'
@@ -941,7 +941,7 @@ module:
       entry.proto.no.tests:
         criterion:
           tests: no.tests
-        path: proto/dwtools/atop/Main.s
+        path: proto/wtools/atop/Main.s
       entry.proto.only.tests:
         criterion:
           tests: only.tests
@@ -951,13 +951,13 @@ module:
           debug: debug
           raw: raw
           content: prime
-        path: '{path::out.*=1}/source/dwtools/atop/puppet.test/**'
+        path: '{path::out.*=1}/source/wtools/atop/puppet.test/**'
       entry.out.raw.debug.release:
         criterion:
           debug: release
           raw: raw
           content: prime
-        path: '{path::out.*=1}/source/dwtools/atop/puppet.test/**'
+        path: '{path::out.*=1}/source/wtools/atop/puppet.test/**'
       entry.out.compiled.debug.debug:
         criterion:
           debug: debug

@@ -4,8 +4,8 @@
   "description" : "Browser puppet strategy",
   "author" : "Kostiantyn Wandalen <wanalen@01.school>",
   "license" : "MIT",
-  "main" : "proto/dwtools/atop/puppet/Main.s",
-  "files" : [ "proto/dwtools/atop/puppet", "proto/dwtools/Tools.s" ],
+  "main" : "proto/wtools/atop/puppet/Main.s",
+  "files" : [ "proto/wtools/atop/puppet", "proto/wtools/Tools.s" ],
   "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen .build proto" },
   "repository" : { "type" : "git", "url" : "https ://github.com/Wandalen/wPuppet.git" },
   "bugs" :

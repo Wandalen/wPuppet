@@ -69,7 +69,7 @@ path :
       content : prime
 
   entry.proto.no.tests :
-    path : proto/dwtools/atop/Main.s
+    path : proto/wtools/atop/Main.s
     criterion :
       tests : 'no.tests'
   entry.proto.only.tests :
@@ -78,7 +78,7 @@ path :
       tests : 'only.tests'
 
   entry.out.raw.debug :
-    path : '{path::out.*=1}/source/dwtools/atop/puppet.test/**'
+    path : '{path::out.*=1}/source/wtools/atop/puppet.test/**'
     criterion :
       debug : [ debug, release ]
       raw : raw

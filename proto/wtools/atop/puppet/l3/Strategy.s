@@ -36,7 +36,7 @@ function WindowForm( window )
   })
   .catch( ( err ) =>
   {
-    logger.log( _.errOnce( err ) );
+    logger.error( _.errOnce( err ) );
     debugger;
     throw err;
   });
@@ -61,7 +61,7 @@ function WindowUnform( window )
   })
   .catch( ( err ) =>
   {
-    logger.log( _.errOnce( err ) );
+    logger.error( _.errOnce( err ) );
     debugger;
     throw err;
   });
@@ -88,7 +88,7 @@ function PageForm( page )
   })
   .catch( ( err ) =>
   {
-    logger.log( _.errOnce( err ) );
+    logger.error( _.errOnce( err ) );
     throw err;
   });
 }
