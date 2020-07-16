@@ -6,15 +6,15 @@ if( typeof module !== 'undefined' )
 {
 
   var Puppeteer = require( 'puppeteer' );
-  var _ = require( '../../../wtools/Tools.s' );
+  let _ = require( '../../../wtools/Tools.s' );
   _.include( 'wTesting' );
   // _.include( 'wStarter' );
   require( '../puppet/Include.s' );
 
 }
 
-var _global = _global_;
-var _ = _global_.wTools;
+let _global = _global_;
+let _ = _global_.wTools;
 
 // --
 // context
@@ -178,7 +178,7 @@ async function puppeteerRaw( test )
 // declare
 // --
 
-var Self =
+let Self =
 {
 
   name : 'Puppet.Ext',
