@@ -1,5 +1,5 @@
 
-# module::Puppet [![Status](https://github.com/Wandalen/wPuppet/workflows/publish/badge.svg)](https://github.com/Wandalen/wPuppet/actions?query=workflow%3Apublish) [![experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/emersion/stability-badges#experimental)
+# module::Puppet [![status](https://github.com/Wandalen/wPuppet/workflows/publish/badge.svg)](https://github.com/Wandalen/wPuppet/actions?query=workflow%3Apublish) [![experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/emersion/stability-badges#experimental)
 
 Browser puppet strategy
 
