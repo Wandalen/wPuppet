@@ -1,1 +1,27 @@
-{"name":"wpuppet","version":"0.3.55","description":"Browser puppet strategy","author":"Kostiantyn Wandalen <wanalen@01.school>","license":"MIT","main":"proto/wtools/atop/puppet/Main.s","files":["proto/wtools/atop/puppet","proto/wtools/Tools.s"],"scripts":{"test":"wtest .run 'proto/**' rapidity:-3","docgen":"wdocgen .build proto"},"repository":{"type":"git","url":"https ://github.com/Wandalen/wPuppet.git"},"bugs":{"url":"https ://github.com/Wandalen/wPuppet/issues"},"dependencies":{"wTools":"alpha","wprocess":"alpha","wCopyable":"alpha","wLogger":"alpha","wFiles":"alpha","wEventHandler":"alpha","puppeteer":"5.2.1"},"devDependencies":{"wTesting":"alpha"},"keywords":["wTools"]}
+{
+  "name" : "wpuppet",
+  "version" : "0.3.56",
+  "description" : "Browser puppet strategy",
+  "author" : "Kostiantyn Wandalen <wanalen@01.school>",
+  "license" : "MIT",
+  "main" : "proto/wtools/atop/puppet/Main.s",
+  "files" : [ "proto/wtools/atop/puppet", "proto/wtools/Tools.s" ],
+  "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen .build proto" },
+  "repository" : { "type" : "git", "url" : "https ://github.com/Wandalen/wPuppet.git" },
+  "bugs" :
+  {
+    "url" : "https ://github.com/Wandalen/wPuppet/issues"
+  },
+  "dependencies" :
+  {
+    "wTools" : "alpha",
+    "wprocess" : "alpha",
+    "wCopyable" : "alpha",
+    "wLogger" : "alpha",
+    "wFiles" : "alpha",
+    "wEventHandler" : "alpha",
+    "puppeteer" : "5.2.1"
+  },
+  "devDependencies" : { "wTesting" : "alpha" },
+  "keywords" : [ "wTools" ]
+}
