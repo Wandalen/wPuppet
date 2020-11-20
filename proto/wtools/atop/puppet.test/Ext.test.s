@@ -83,7 +83,7 @@ async function basic( test )
       var style = window.getComputedStyle( document.querySelector( 'body' ) );
       return style.getPropertyValue( 'background' )
     });
-    test.is( _.strHas( got, 'rgb(173, 216, 230)' ) );
+    test.true( _.strHas( got, 'rgb(173, 216, 230)' ) );
 
     await window.close();
   }
@@ -124,7 +124,7 @@ async function onConsole( test )
       console.log( 'Hello world' );
     });
 
-    test.is( _.strHas( output, 'Hello world' ) );
+    test.true( _.strHas( output, 'Hello world' ) );
 
     await window.close();
   }
@@ -162,7 +162,7 @@ async function puppeteerRaw( test )
       var style = window.getComputedStyle( document.querySelector( 'body' ) );
       return style.getPropertyValue( 'background' )
     });
-    test.is( _.strHas( got, 'rgb(173, 216, 230)' ) );
+    test.true( _.strHas( got, 'rgb(173, 216, 230)' ) );
 
     await window.close();
   }
