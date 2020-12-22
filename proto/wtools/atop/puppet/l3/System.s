@@ -106,7 +106,7 @@ function formAssociates()
   }
 
   // _.assert( sys.strategy instanceof _.puppet.StrategyAbstract );
-  _.isPrototypeOf( _.puppet.StrategyAbstract, sys.strategy );
+  _.assert( _.prototypeIsPrototypeOf( _.puppet.StrategyAbstract, sys.strategy ) );
 
   return sys;
 }
