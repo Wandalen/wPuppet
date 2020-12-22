@@ -49,7 +49,7 @@ function windowOpen( o )
 function strategyAdd( Strategy )
 {
 
-  _.isPrototypeOf( _.puppet.StrategyAbstract, Strategy )
+  _.prototypeIsPrototypeOf( _.puppet.StrategyAbstract, Strategy )
 
   _.assert( _.puppet.Strategies[ Strategy.shortName ] === undefined );
   _.puppet.Strategies[ Strategy.shortName ] = Strategy;
