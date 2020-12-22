@@ -1,4 +1,5 @@
-( function _Page_s_( ) {
+( function _Page_s_( )
+{
 
 'use strict';
 

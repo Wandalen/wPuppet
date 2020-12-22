@@ -1,4 +1,5 @@
-( function _System_s_( ) {
+( function _System_s_( )
+{
 
 'use strict';
 
