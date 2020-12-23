@@ -76,7 +76,7 @@ async function basic( test )
 
     await page.goto( `file://${_.path.nativize( a.abs( 'Index.html' ) )}` );
 
-    var exp = [ `file://${_.path.nativize( a.abs( 'Index.js' ) )}`.replace( /\\/g, '/' ), `` ]
+    var exp = [ `file://${process.platform === 'win32' ? '/' : '' }${_.path.nativize( a.abs( 'Index.js' ) )}`.replace( /\\/g, '/' ), `` ]
     var got = await page.selectEval( 'script', ( scripts ) => scripts.map( ( s ) => s.src ) );
     test.identical( got, exp );
 
@@ -155,7 +155,7 @@ async function puppeteerRaw( test )
 
     await page.goto( `file://${_.path.nativize( a.abs( 'Index.html' ) )}`, { waitUntil : 'load' } );
 
-    var exp = [ `file://${_.path.nativize( a.abs( 'Index.js' ) )}`.replace( /\\/g, '/' ), `` ]
+    var exp = [ `file://${process.platform === 'win32' ? '/' : '' }${_.path.nativize( a.abs( 'Index.js' ) )}`.replace( /\\/g, '/' ), `` ]
     var got = await page.$$eval( 'script', ( scripts ) => scripts.map( ( s ) => s.src ) );
     test.identical( got, exp );
 
