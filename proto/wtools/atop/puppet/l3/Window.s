@@ -1,4 +1,5 @@
-( function _Window_s_( ) {
+( function _Window_s_( )
+{
 
 'use strict';
 
@@ -121,7 +122,7 @@ function pageOpen()
   let window = this;
   let sys = window.system;
   _.assert( arguments.length === 0 || arguments.length === 1 );
-  let page = new _.puppet.Page({ system : sys, window : window });
+  let page = new _.puppet.Page({ system : sys, window });
   return page.form();
 }
 

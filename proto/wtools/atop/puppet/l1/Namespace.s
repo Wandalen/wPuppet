@@ -1,4 +1,5 @@
-( function _Namespace_s_( ) {
+( function _Namespace_s_( )
+{
 
 'use strict';
 
@@ -10,7 +11,7 @@ _.puppet.Strategies = _.puppet.Strategies || Object.create( null );
 let vectorize = _.routineDefaults( null, _.vectorize, { vectorizingContainerAdapter : 1, unwrapingContainerAdapter : 0 } );
 let vectorizeAll = _.routineDefaults( null, _.vectorizeAll, { vectorizingContainerAdapter : 1, unwrapingContainerAdapter : 0 } );
 let vectorizeAny = _.routineDefaults( null, _.vectorizeAny, { vectorizingContainerAdapter : 1, unwrapingContainerAdapter : 0 } );
-let vectorizeNone = _.routineDefaults( null, _.vectorizeNone, { vectorizingContainerAdapter : 1, unwrapingContainerAdapter : 0 } );
+let vectorizeNone = _.routineDefaults( null, _.vectorizeNone, { vectorizingContainerAdapter : 1, unwrapingContainerAdapter : 0 } )
 
 // --
 // inter
@@ -49,7 +50,7 @@ function windowOpen( o )
 function strategyAdd( Strategy )
 {
 
-  _.prototypeIsPrototypeOf( _.puppet.StrategyAbstract, Strategy )
+  _.assert( _.prototypeIsPrototypeOf( _.puppet.StrategyAbstract, Strategy ) );
 
   _.assert( _.puppet.Strategies[ Strategy.shortName ] === undefined );
   _.puppet.Strategies[ Strategy.shortName ] = Strategy;

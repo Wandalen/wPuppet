@@ -1,4 +1,5 @@
-( function _System_s_( ) {
+( function _System_s_( )
+{
 
 'use strict';
 
@@ -105,7 +106,7 @@ function formAssociates()
   }
 
   // _.assert( sys.strategy instanceof _.puppet.StrategyAbstract );
-  _.prototypeIsPrototypeOf( _.puppet.StrategyAbstract, sys.strategy );
+  _.assert( _.prototypeIsPrototypeOf( _.puppet.StrategyAbstract, sys.strategy ) );
 
   return sys;
 }

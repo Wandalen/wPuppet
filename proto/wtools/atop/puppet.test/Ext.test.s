@@ -1,11 +1,13 @@
-( function _Ext_test_s_() {
+( function _Ext_test_s_()
+{
 
 'use strict';
 
+var Puppeteer;
 if( typeof module !== 'undefined' )
 {
 
-  var Puppeteer = require( 'puppeteer' );
+  Puppeteer = require( 'puppeteer' );
   let _ = require( '../../../wtools/Tools.s' );
   _.include( 'wTesting' );
   // _.include( 'wStarter' );

@@ -1,4 +1,5 @@
-( function _Strategy_s_( ) {
+( function _Strategy_s_( )
+{
 
 'use strict';
 
@@ -159,8 +160,13 @@ function PageEval( page, routine, ... args )
 
 //
 
-function PageSelectEval( page, selector, routine, ... args )
+function PageSelectEval( /* page, selector, routine, ... args */ ... args )
 {
+  let page = args[ 0 ];
+  let selector = args[ 1 ];
+  let routine = args[ 2 ];
+  let args2 = args.slice( 3 );
+
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
@@ -169,14 +175,20 @@ function PageSelectEval( page, selector, routine, ... args )
   {
     _.assert( _.strIs( routine ) || _.routineIs( routine ) );
     _.assert( arguments.length >= 3 );
-    return this._PageSelectEval( page, selector, routine, ... args );
+    return this._PageSelectEval( page, selector, routine, ... args2 );
   })
 }
 
 //
 
-function PageSelectFirstEval( page, selector, routine, ... args )
+function PageSelectFirstEval( /* page, selector, routine, ... args */ ... args )
 {
+
+  let page = args[ 0 ];
+  let selector = args[ 1 ];
+  let routine = args[ 2 ];
+  let args2 = args.slice( 3 );
+
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
@@ -185,7 +197,7 @@ function PageSelectFirstEval( page, selector, routine, ... args )
   {
     _.assert( _.strIs( routine ) || _.routineIs( routine ) );
     _.assert( arguments.length >= 3 );
-    return this._PageSelectFirstEval( page, selector, routine, ... args );
+    return this._PageSelectFirstEval( page, selector, routine, ... args2 );
   })
 }
 

@@ -1,4 +1,5 @@
-( function _Puppeteer_s_( ) {
+( function _Puppeteer_s_( )
+{
 
 'use strict';
 
@@ -115,23 +116,34 @@ function _PageEval( page, routine, ... args )
 
 //
 
-function _PageSelectEval( page, selector, routine, ... args )
+function _PageSelectEval( /* page, selector, routine, ... args */ ... args )
 {
+  let page = args[ 0 ];
+  let selector = args[ 1 ];
+  let routine = args[ 2 ];
+  let args2 = args.slice( 3 );
+
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
-  return page._handle.$$eval( selector, routine, ... args );
+  return page._handle.$$eval( selector, routine, ... args2 );
 }
 
 //
 
-function _PageSelectFirstEval( page, selector, routine, ... args )
+function _PageSelectFirstEval( /* page, selector, routine, ... args */ ... args )
 {
+
+  let page = args[ 0 ];
+  let selector = args[ 1 ];
+  let routine = args[ 2 ];
+  let args2 = args.slice( 3 );
+
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
   debugger;
-  return page._handle.$eval( selector, routine, ... args );
+  return page._handle.$eval( selector, routine, ... args2 );
 }
 
 //
@@ -144,7 +156,7 @@ function _PageEventHandlerRegister( page, kind )
 
   _.assert( Events[ kind ] !== undefined, `Event ${kind} support is not implemented` );
 
-  return page._handle.on( kind, function( ...args )
+  return page._handle.on( kind, function( ... args )
   {
     page.eventGive({ kind, args })
   });
