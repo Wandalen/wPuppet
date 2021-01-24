@@ -8,7 +8,7 @@ Browser puppet strategy
 git clone https://github.com/Wandalen/wPuppet
 cd wPuppet
 npm install
-node sample/Sample.s
+node sample/trivial/Sample.s
 ```
 
 ## To add to your project
