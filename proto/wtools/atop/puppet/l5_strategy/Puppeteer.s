@@ -30,7 +30,7 @@ function _WindowForm( window )
 
   let o2 = Object.create( null );
   o2.headless = !!window.headless;
-  o2.product  = window.browser || 'chrome';
+  o2.product = window.browser || 'chrome';
 
   return Puppeteer.launch( o2 );
 }
