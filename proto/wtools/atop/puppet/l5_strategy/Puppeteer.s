@@ -142,7 +142,6 @@ function _PageSelectFirstEval( /* page, selector, routine, ... args */ ... args 
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
-  debugger;
   return page._handle.$eval( selector, routine, ... args2 );
 }
 
