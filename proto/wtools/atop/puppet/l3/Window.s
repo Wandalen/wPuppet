@@ -7,9 +7,9 @@ let Puppeteer = require( 'puppeteer' );
 
 //
 
-let _ = _global_.wTools;
-let Parent = null;
-let Self = wPuppetWindow;
+const _ = _global_.wTools;
+const Parent = null;
+const Self = wPuppetWindow;
 function wPuppetWindow( o )
 {
   return _.workpiece.construct( Self, this, arguments );

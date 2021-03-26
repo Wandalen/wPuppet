@@ -5,9 +5,9 @@
 
 //
 
-let _ = _global_.wTools;
-let Parent = null;
-let Self = wPuppetSystem;
+const _ = _global_.wTools;
+const Parent = null;
+const Self = wPuppetSystem;
 function wPuppetSystem( o )
 {
   return _.workpiece.construct( Self, this, arguments );

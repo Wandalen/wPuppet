@@ -3,8 +3,8 @@
 
 'use strict';
 
-let _ = _global_.wTools;
-let Self = _.puppet;
+const _ = _global_.wTools;
+const Self = _.puppet;
 
 // --
 // inter

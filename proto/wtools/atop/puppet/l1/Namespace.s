@@ -3,8 +3,8 @@
 
 'use strict';
 
-let _ = _global_.wTools;
-let Self = _.puppet = _.puppet || Object.create( null );
+const _ = _global_.wTools;
+const Self = _.puppet = _.puppet || Object.create( null );
 // _.puppet.strategies = _.puppet.strategies || Object.create( null );
 _.puppet.Strategies = _.puppet.Strategies || Object.create( null );
 

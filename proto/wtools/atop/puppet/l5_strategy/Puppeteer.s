@@ -7,9 +7,9 @@ let Puppeteer = require( 'puppeteer' );
 
 //
 
-let _ = _global_.wTools;
-let Parent = _.puppet.StrategyAbstract;
-let Self = wPuppetStrategyPuppeteer;
+const _ = _global_.wTools;
+const Parent = _.puppet.StrategyAbstract;
+const Self = wPuppetStrategyPuppeteer;
 function wPuppetStrategyPuppeteer( o )
 {
   return _.workpiece.construct( Self, this, arguments );
