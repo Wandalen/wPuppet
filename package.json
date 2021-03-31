@@ -1,13 +1,14 @@
 {
   "name": "wpuppet",
-  "version": "0.3.105",
+  "version": "0.3.106",
   "description": "Browser puppet strategy",
   "author": "Kostiantyn Wandalen <wanalen@01.school>",
   "license": "MIT",
   "main": "proto/wtools/atop/puppet/Main.s",
   "files": [
     "proto/wtools/atop/puppet",
-    "proto/wtools/Tools.s"
+    "proto/wtools/Tools.s",
+    "proto/node_modules"
   ],
   "scripts": {
     "test": "wtest .run 'proto/**' rapidity:-3",
