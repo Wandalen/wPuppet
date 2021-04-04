@@ -1,40 +1,27 @@
 {
-  "name": "wpuppet",
-  "version": "0.3.107",
-  "description": "Browser puppet strategy",
-  "author": "Kostiantyn Wandalen <wanalen@01.school>",
-  "license": "MIT",
-  "main": "proto/wtools/atop/puppet/Main.s",
-  "files": [
-    "proto/wtools/atop/puppet",
-    "proto/wtools/Tools.s",
-    "proto/node_modules"
-  ],
-  "scripts": {
-    "test": "wtest .run 'proto/**' rapidity:-3",
-    "docgen": "wdocgen .build proto"
+  "name" : "wpuppet",
+  "version" : "0.3.108",
+  "description" : "Browser puppet strategy",
+  "author" : "Kostiantyn Wandalen <wanalen@01.school>",
+  "license" : "MIT",
+  "main" : "proto/node_modules/wpuppet",
+  "files" : [ "proto/wtools/atop/puppet", "proto/wtools/Tools.s", "proto/node_modules" ],
+  "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen .build proto" },
+  "repository" : { "type" : "git", "url" : "https ://github.com/Wandalen/wPuppet.git" },
+  "bugs" :
+  {
+    "url" : "https ://github.com/Wandalen/wPuppet/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "https ://github.com/Wandalen/wPuppet.git"
+  "dependencies" :
+  {
+    "wTools" : "delta",
+    "wprocess" : "delta",
+    "wCopyable" : "delta",
+    "wLogger" : "delta",
+    "wFiles" : "delta",
+    "wEventHandler" : "delta",
+    "puppeteer" : "8.0.0"
   },
-  "bugs": {
-    "url": "https ://github.com/Wandalen/wPuppet/issues"
-  },
-  "dependencies": {
-    "wTools": "delta",
-    "wprocess": "delta",
-    "wCopyable": "delta",
-    "wLogger": "delta",
-    "wFiles": "delta",
-    "wEventHandler": "delta",
-    "puppeteer": "8.0.0"
-  },
-  "devDependencies": {
-    "eslint": "7.1.0",
-    "wTesting": "delta"
-  },
-  "keywords": [
-    "wTools"
-  ]
+  "devDependencies" : { "eslint" : "7.1.0", "wTesting" : "delta" },
+  "keywords" : [ "wTools" ]
 }
