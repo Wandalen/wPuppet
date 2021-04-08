@@ -8,7 +8,7 @@ if( typeof module !== 'undefined' )
 {
 
   Puppeteer = require( 'puppeteer' );
-  let _ = require( '../../../node_modules/Tools' );
+  const _ = require( '../../../node_modules/Tools' );
   _.include( 'wTesting' );
   // _.include( 'wStarter' );
   require( '../puppet/Include.s' );
