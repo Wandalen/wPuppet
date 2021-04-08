@@ -1572,6 +1572,4 @@ module:
       ../.im.will.yml:
         hash: e41e1a6648b2ce0be13370bd74082c3b
         size: 5227
-      wPuppet.out.will.yml:
-        hash: bc9dcdbb25c30e5fae597af4596ac303
-        size: 40640
+      wPuppet.out.will.yml: *ref_0
