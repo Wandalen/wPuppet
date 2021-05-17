@@ -2,12 +2,9 @@ format: outwillfile-2.0
 root:
   - wPuppet.out
 consistency:
-  ../.ex.will.yml: &ref_0
-    hash: c20bf43e91ab4a648f2be03e50f74a5f
-    size: 1674
-  ../.im.will.yml: &ref_1
-    hash: e41e1a6648b2ce0be13370bd74082c3b
-    size: 5227
+  ../will.yml: &ref_0
+    hash: c3287dcf4f90e2009f69c7efa07e6f34
+    size: 6655
 module:
   wPuppet.out:
     about:
@@ -16,19 +13,19 @@ module:
       description: Browser puppet strategy
       enabled: 1
       version: 0.4.0
-      interpreters: &ref_2
+      license: MIT
+      npm.name: wpuppet
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: &ref_1
+        - tools
+        - wTools
+      contributors: &ref_2
+        - Kostiantyn Wandalen <wanalen@01.school>
+      interpreters: &ref_3
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_3
-        - tools
-        - wTools
-      license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: &ref_4
-        - Kostiantyn Wandalen <wanalen@01.school>
-      npm.name: wpuppet
-      npm.scripts: &ref_5
+      npm.scripts: &ref_4
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -43,15 +40,11 @@ module:
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
-        path:
-          - ../.ex.will.yml
-          - ../.im.will.yml
+        path: ../will.yml
       module.peer.in:
         criterion:
           predefined: 1
@@ -196,7 +189,7 @@ module:
         path: 'npm:///wTools'
         autoExporting: 0
         enabled: 0
-      wProcess:
+      wprocess:
         path: 'npm:///wprocess'
         autoExporting: 0
         enabled: 0
@@ -833,8 +826,7 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      ../will.yml: *ref_0
   ../:
     about:
       name: wPuppet
@@ -842,26 +834,22 @@ module:
       description: Browser puppet strategy
       enabled: 1
       version: 0.4.0
-      interpreters: *ref_2
-      keywords: *ref_3
       license: MIT
-      author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: *ref_4
       npm.name: wpuppet
-      npm.scripts: *ref_5
+      author: Kostiantyn Wandalen <wanalen@01.school>
+      keywords: *ref_1
+      contributors: *ref_2
+      interpreters: *ref_3
+      npm.scripts: *ref_4
     path:
       module.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.original.willfiles:
         criterion:
           predefined: 1
-        path:
-          - .ex.will.yml
-          - .im.will.yml
+        path: will.yml
       module.peer.willfiles:
         criterion:
           predefined: 1
@@ -963,7 +951,7 @@ module:
         path: 'npm:///wTools'
         autoExporting: 0
         enabled: 0
-      wProcess:
+      wprocess:
         path: 'npm:///wprocess'
         autoExporting: 0
         enabled: 0
@@ -1536,9 +1524,6 @@ module:
           - 'build::release'
           - 'build::npm'
     consistency:
-      ../.ex.will.yml:
-        hash: c20bf43e91ab4a648f2be03e50f74a5f
-        size: 1674
-      ../.im.will.yml:
-        hash: e41e1a6648b2ce0be13370bd74082c3b
-        size: 5227
+      ../will.yml:
+        hash: c3287dcf4f90e2009f69c7efa07e6f34
+        size: 6655
