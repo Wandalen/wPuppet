@@ -94,7 +94,7 @@ function goto( pagePath )
 
   _.assert( _.strDefined( pagePath ) );
   _.assert( arguments.length === 1 );
-  _.assert( page.formed );
+  _.assert( page.formed > 0 );
 
   page.pagePath = pagePath;
 

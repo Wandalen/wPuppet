@@ -4,7 +4,6 @@
 'use strict';
 
 const _ = _global_.wTools;
-const Self = _.puppet;
 
 // --
 // inter
@@ -28,7 +27,7 @@ let Extension =
 
 }
 
-_.props.extend( Self, Extension );
+/* _.props.extend */Object.assign( _.puppet, Extension );
 _.puppet._metaSetup();
 
 //

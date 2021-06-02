@@ -4,8 +4,7 @@
 'use strict';
 
 const _ = _global_.wTools;
-const Self = _.puppet = _.puppet || Object.create( null );
-// _.puppet.strategies = _.puppet.strategies || Object.create( null );
+_.puppet = _.puppet || Object.create( null );
 _.puppet.Strategies = _.puppet.Strategies || Object.create( null );
 
 let vectorize = _.routineDefaults( null, _.vectorize, { vectorizingContainerAdapter : 1, unwrapingContainerAdapter : 0 } );
@@ -87,7 +86,7 @@ let Extension =
 
 }
 
-_.props.extend( Self, Extension );
+/* _.props.extend */Object.assign( _.puppet, Extension );
 
 //
 
