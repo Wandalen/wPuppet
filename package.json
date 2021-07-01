@@ -1,27 +1,41 @@
 {
-  "name" : "wpuppet",
-  "version" : "0.3.124",
-  "description" : "Browser puppet strategy",
-  "author" : "Kostiantyn Wandalen <wanalen@01.school>",
-  "license" : "MIT",
-  "main" : "proto/node_modules/wpuppet",
-  "files" : [ "proto/wtools/atop/puppet", "proto/node_modules", "proto/node_modules/Tools", "proto/node_modules/wpuppet" ],
-  "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen .build proto" },
-  "repository" : { "type" : "git", "url" : "https ://github.com/Wandalen/wPuppet.git" },
-  "bugs" :
-  {
-    "url" : "https ://github.com/Wandalen/wPuppet/issues"
+  "name": "wpuppet",
+  "version": "0.3.125",
+  "description": "Browser puppet strategy",
+  "author": "Kostiantyn Wandalen <wanalen@01.school>",
+  "license": "MIT",
+  "main": "proto/node_modules/wpuppet",
+  "files": [
+    "proto/wtools/atop/puppet",
+    "proto/node_modules",
+    "proto/node_modules/Tools",
+    "proto/node_modules/wpuppet"
+  ],
+  "scripts": {
+    "test": "wtest .run 'proto/**' rapidity:-3",
+    "docgen": "wdocgen .build proto"
   },
-  "dependencies" :
-  {
-    "wTools" : "gamma",
-    "wprocess" : "gamma",
-    "wCopyable" : "gamma",
-    "wLogger" : "gamma",
-    "wFiles" : "gamma",
-    "wEventHandler" : "gamma",
-    "puppeteer" : "10.0.0"
+  "repository": {
+    "type": "git",
+    "url": "https ://github.com/Wandalen/wPuppet.git"
   },
-  "devDependencies" : { "eslint" : "7.1.0", "wTesting" : "gamma" },
-  "keywords" : [ "wTools" ]
+  "bugs": {
+    "url": "https ://github.com/Wandalen/wPuppet/issues"
+  },
+  "dependencies": {
+    "wTools": "gamma",
+    "wprocess": "gamma",
+    "wLogger": "gamma",
+    "wFiles": "gamma",
+    "wEventHandler": "gamma",
+    "wCopyable": "gamma",
+    "puppeteer": "10.1.0"
+  },
+  "devDependencies": {
+    "wTesting": "gamma",
+    "eslint": "7.1.0"
+  },
+  "keywords": [
+    "wTools"
+  ]
 }
