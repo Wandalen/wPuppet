@@ -1,6 +1,6 @@
 {
   "name": "wpuppet",
-  "version": "0.3.142",
+  "version": "0.3.143",
   "description": "Browser puppet strategy",
   "author": "Kostiantyn Wandalen <wanalen@01.school>",
   "license": "MIT",
@@ -23,16 +23,16 @@
     "url": "https ://github.com/Wandalen/wPuppet/issues"
   },
   "dependencies": {
-    "wTools": "latest",
-    "wprocess": "latest",
-    "wLogger": "latest",
-    "wFiles": "latest",
-    "wEventHandler": "latest",
-    "wCopyable": "latest",
+    "wTools": "delta",
+    "wprocess": "delta",
+    "wLogger": "delta",
+    "wFiles": "delta",
+    "wEventHandler": "delta",
+    "wCopyable": "delta",
     "puppeteer": "10.2.0"
   },
   "devDependencies": {
-    "wTesting": "latest",
+    "wTesting": "delta",
     "eslint": "7.1.0"
   },
   "keywords": [
