@@ -158,6 +158,62 @@ function eval_()
 
 //
 
+function waitForFunction()
+{
+  let page = this;
+  let sys = page.system;
+  let strategy = sys.strategy;
+  _.assert( arguments.length >= 1 );
+  return strategy.PageWaitForFunction( page, ... arguments );
+
+}
+
+//
+
+function elementScreenshot()
+{
+  let page = this;
+  let sys = page.system;
+  let strategy = sys.strategy;
+  _.assert( arguments.length >= 1 );
+  return strategy.ElementScreenshot( page, ... arguments );
+}
+
+//
+
+function mouseClick()
+{
+  let page = this;
+  let sys = page.system;
+  let strategy = sys.strategy;
+  _.assert( arguments.length >= 2 );
+  return strategy.MouseClick( page, ... arguments );
+}
+
+//
+
+function mouseMove()
+{
+  let page = this;
+  let sys = page.system;
+  let strategy = sys.strategy;
+  _.assert( arguments.length >= 2 );
+  return strategy.MouseMove( page, ... arguments );
+}
+
+//
+
+function sessionDetailsGet()
+{
+  let page = this;
+  let sys = page.system;
+  let strategy = sys.strategy;
+  _.assert( arguments.length === 0 );
+  return strategy.SessionDetailsGet( page );
+}
+
+//
+
 function _eventHandlerRegister( o )
 {
   let page = this;
@@ -209,7 +265,9 @@ let Forbids =
 
 let Events =
 {
-  console : 'console'
+  console : 'console',
+  requestfailed : 'requestfailed',
+  pageerror : 'pageerror'
 }
 
 // --
@@ -234,6 +292,15 @@ let Proto =
   selectEval,
   selectFirstEval,
   eval : eval_,
+  evaluate : eval_,
+  waitForFunction,
+
+  mouseClick,
+  mouseMove,
+
+  elementScreenshot,
+
+  sessionDetailsGet,
 
   // event
 

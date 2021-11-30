@@ -297,6 +297,9 @@ submodule:
   puppeteer:
     path: 'npm:///puppeteer'
     enabled: 0
+  webdriverio:
+    path: 'npm:///webdriverio'
+    enabled: 0
   wpuppet:
     path: 'hd://.'
     enabled: 0

@@ -29,7 +29,8 @@
     "wFiles": "",
     "wEventHandler": "",
     "wCopyable": "",
-    "puppeteer": ""
+    "puppeteer": "",
+    "webdriverio": ""
   },
   "devDependencies": {
     "wTesting": "",
