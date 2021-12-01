@@ -3,8 +3,6 @@
 
 'use strict';
 
-let Puppeteer = require( 'puppeteer' );
-
 //
 
 const _ = _global_.wTools;
@@ -134,6 +132,8 @@ let Composes =
 {
   headless : 1,
   browser : null,
+  dimensions : _.define.own([ 800, 600 ]),
+  remoteConfig : null
 }
 
 let Aggregates =

@@ -16,6 +16,7 @@ if( typeof module !== 'undefined' )
   require( '../l3/Window.s' );
 
   require( '../l5_strategy/Puppeteer.s' );
+  require( '../l5_strategy/WebDriverIO.s' );
 
   require( '../l9/Namespace.s' );
 

@@ -1,21 +1,21 @@
-( function _Puppeteer_s_( )
+( function _WebDriverIO_s_( )
 {
 
 'use strict';
 
-let Puppeteer = require( 'puppeteer' );
+let WebDriverIO = require( 'webdriverio' );
 
 //
 
 const _ = _global_.wTools;
 const Parent = _.puppet.StrategyAbstract;
-const Self = wPuppetStrategyPuppeteer;
-function wPuppetStrategyPuppeteer( o )
+const Self = wPuppetStrategyWebDriverIO;
+function wPuppetStrategyWebDriverIO( o )
 {
   return _.workpiece.construct( Self, this, arguments );
 }
 
-Self.shortName = 'Puppeteer';
+Self.shortName = 'WebDriverIO';
 
 // --
 // inter
@@ -26,29 +26,16 @@ function _WindowForm( window )
   let sys = window.system;
   let logger = sys.logger;
 
-  _.assert( _.longHas( [ null, 'chrome', 'firefox', 'browserstack' ], window.browser ) );
-
-  const [ width, height ] = window.dimensions;
+  _.assert( _.longHas( [ null, 'browserstack' ], window.browser ) );
 
   if( window.browser === 'browserstack' )
   {
+    let o2 = Object.create( null );
     _.assert( _.map.is( window.remoteConfig ) );
-    let caps = encodeURIComponent( JSON.stringify( window.remoteConfig ) );
-    let r = Puppeteer.connect
-    ({
-      browserWSEndpoint: `wss://cdp.browserstack.com/puppeteer?caps=${caps}`,
-      defaultViewport: { width, height }
-    });
-    return r;
+    _.map.extend( o2, window.remoteConfig );
+
+    return _.Consequence.Try( () => WebDriverIO.remote( o2 ) )
   }
-
-  let o2 = Object.create( null );
-  o2.headless = !!window.headless;
-  o2.product = window.browser || 'chrome';
-  o2.args = [ '--no-sandbox', '--enable-precise-memory-info', `--window-size=${ width },${ height }` ],
-  o2.defaultViewport = { width, height }
-
-  return Puppeteer.launch( o2 );
 }
 
 //
@@ -60,15 +47,10 @@ function _WindowUnform( window )
 
   return _.Consequence.Try( () =>
   {
-    return window._handle.pages();
+    return window._handle.deleteSession();
   })
-  .then( ( pages ) => 
+  .then( ( result ) =>
   {
-    return _.Consequence.And( ...pages.map( ( page ) => page.close() ) );
-  })
-  .then( () => 
-  {
-    let result = window._handle.close();
     if( result === undefined )
     result = null;
     return result;
@@ -83,21 +65,7 @@ function _PageForm( page )
   let window = page.window;
   let logger = sys.logger;
 
-  return _.Consequence.Try( () =>
-  {
-    return window._handle.newPage();
-  })
-  .then( ( handle ) =>
-  {
-    page._handle = handle;
-    // return handle.goto( page.pagePath, { waitUntil : 'load' } )
-    return page._handle;
-  })
-  // .then( ( handle ) =>
-  // {
-  //   return page._handle;
-  // })
-
+  return Object.create( null );
 }
 
 //
@@ -109,7 +77,11 @@ function _PageGoto( page, pagePath )
   let logger = sys.logger;
   page.pagePath = pagePath;
 
-  return page._handle.goto( page.pagePath, { waitUntil : 'load' } )
+  return _.Consequence.Try( () =>
+  { 
+    return window._handle.url( page.pagePath );
+  })
+
 }
 
 //
@@ -119,7 +91,7 @@ function _PageSelect( page, selector )
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
-  return page._handle.$( selector );
+  return window._handle.$( selector );
 }
 
 //
@@ -129,7 +101,7 @@ function _PageSelectFirst( page, selector )
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
-  return page._handle.$$( selector );
+  return window._handle.$$( selector );
 }
 
 //
@@ -139,7 +111,7 @@ function _PageEval( page, routine, ... args )
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
-  return page._handle.evaluate( routine, ... args );
+  return window._handle.execute( routine, ... args );
 }
 
 //
@@ -154,7 +126,10 @@ function _PageSelectEval( /* page, selector, routine, ... args */ ... args )
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
-  return page._handle.$$eval( selector, routine, ... args2 );
+
+  _.assert( 0, 'not implemented' );
+
+  // return page._handle.$$eval( selector, routine, ... args2 );
 }
 
 //
@@ -169,7 +144,10 @@ function _PageSelectFirstEval( /* page, selector, routine, ... args */ ... args 
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
-  return page._handle.$eval( selector, routine, ... args2 );
+
+  _.assert( 0, 'not implemented' );
+
+  // return page._handle.$eval( selector, routine, ... args2 );
 }
 
 //
@@ -183,7 +161,15 @@ function _PageWaitForFunction( /* page, routine, ... args */ ... args )
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
-  return page._handle.waitForFunction( routine, ... args2 );
+  
+  return _.Consequence.Try( () =>
+  { 
+    
+    return window._handle.waitUntil( async () => 
+    {
+      return await window._handle.execute( routine );
+    }, ... args2 );
+  })
 }
 
 //
@@ -198,17 +184,13 @@ function _ElementScreenshot( /* page, routine, ... args */ ... args )
   let window = page.window;
   let logger = sys.logger;
 
-  return _.Consequence.From( page._handle.$( selector ) )
+  return _.Consequence.From( window._handle.$( selector ) )
   .then( ( element ) => 
   {
     if( path )
     _.fileProvider.dirMakeForFile( path );
 
-    return element.screenshot
-    ({
-      path,
-      omitBackground: true,
-    });
+    return element.saveScreenshot( path );
   })
 }
 
@@ -217,14 +199,19 @@ function _ElementScreenshot( /* page, routine, ... args */ ... args )
 function _MouseClick( /* page, routine, ... args */ ... args )
 {
   let page = args[ 0 ];
-  let x = args[ 1 ];
-  let y = args[ 2 ];
+  let element = args[ 1 ];
+  let x = args[ 2 ];
+  let y = args[ 3 ];
 
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
 
-  return _.Consequence.From( page._handle.mouse.click( x, y ) );
+  return _.Consequence.From( window._handle.$( element ) )
+  .then( ( element ) => 
+  {
+    return element.click({ button : 0, x, y });
+  })
 }
 
 //
@@ -232,14 +219,19 @@ function _MouseClick( /* page, routine, ... args */ ... args )
 function _MouseMove( /* page, routine, ... args */ ... args )
 {
   let page = args[ 0 ];
-  let x = args[ 1 ];
-  let y = args[ 2 ];
+  let element = args[ 1 ];
+  let x = args[ 2 ];
+  let y = args[ 3 ];
 
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
 
-  return _.Consequence.From( page._handle.mouse.move( x, y ) );
+  return _.Consequence.From( window._handle.$( element ) )
+  .then( ( element ) => 
+  {
+    return element.moveTo({ x, y });
+  });
 }
 
 //
@@ -248,11 +240,8 @@ function _SessionDetailsGet( /* page, routine, ... args */ ... args )
 {
   let page = args[ 0 ];
   let window = page.window;
-
   _.assert( window.browser === 'browserstack' );
-
-  let arg = `browserstack_executor: ${JSON.stringify({action: 'getSessionDetails'})}`;
-  return _.Consequence.From( page._handle.evaluate( () => {}, arg ) )
+  return _.Consequence.From( window._handle.execute( `browserstack_executor: ${JSON.stringify({action: 'getSessionDetails'})}` ) );
 }
 
 //
@@ -265,10 +254,12 @@ function _PageEventHandlerRegister( page, kind )
 
   _.assert( Events[ kind ] !== undefined, `Event ${kind} support is not implemented` );
 
-  return page._handle.on( kind, function( ... args )
-  {
-    page.eventGive({ kind, args })
-  });
+  return null;
+
+  // return page._handle.on( kind, function( ... args )
+  // {
+  //   page.eventGive({ kind, args })
+  // });
 }
 
 // --

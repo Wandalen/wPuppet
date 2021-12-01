@@ -201,6 +201,98 @@ function PageSelectFirstEval( /* page, selector, routine, ... args */ ... args )
 
 //
 
+function PageWaitForFunction( ... args )
+{
+  let page = args[ 0 ];
+  let routine = args[ 1 ];
+  let args2 = args.slice( 2 );
+
+  let sys = page.system;
+  let window = page.window;
+  let logger = sys.logger;
+
+  return _.Consequence.Try( () =>
+  {
+    _.assert( _.strIs( routine ) || _.routineIs( routine ) );
+    _.assert( arguments.length >= 3 );
+    return this._PageWaitForFunction( page, routine, ... args2 );
+  })
+}
+
+//
+
+function ElementScreenshot( ... args )
+{
+  let page = args[ 0 ];
+  let selector = args[ 1 ];
+  let path = args[ 2 ];
+
+  let sys = page.system;
+  let window = page.window;
+  let logger = sys.logger;
+
+  return _.Consequence.Try( () =>
+  {
+    _.assert( _.strIs( selector ), 'Element selector should be a string, got:', selector );
+    _.assert( arguments.length >= 2 );
+
+    if( path )
+    path = _.path.nativize( path );
+    
+    return this._ElementScreenshot( page, selector, path );
+  })
+}
+
+//
+
+function MouseClick( ... args )
+{
+  let page = args[ 0 ];
+
+  let sys = page.system;
+  let window = page.window;
+  let logger = sys.logger;
+
+  return _.Consequence.Try( () =>
+  {
+    return this._MouseClick( ... args );
+  })
+}
+
+//
+
+function MouseMove( ... args )
+{
+  let page = args[ 0 ];
+
+  let sys = page.system;
+  let window = page.window;
+  let logger = sys.logger;
+
+  return _.Consequence.Try( () =>
+  {
+    return this._MouseMove( ... args );
+  })
+}
+
+//
+
+function SessionDetailsGet( page )
+{
+  let sys = page.system;
+  let window = page.window;
+  let logger = sys.logger;
+
+  return _.Consequence.Try( () =>
+  {
+    _.assert( arguments.length === 1 );
+
+    return this._SessionDetailsGet( page );
+  })
+}
+
+//
+
 function PageEventHandlerRegister( page, kind )
 {
   let sys = page.system;
@@ -260,6 +352,16 @@ let Statics =
   PageSelectEval,
   _PageSelectFirstEval : null,
   PageSelectFirstEval,
+  _PageWaitForFunction : null,
+  PageWaitForFunction,
+  _ElementScreenshot : null,
+  ElementScreenshot,
+  _MouseClick : null,
+  MouseClick,
+  _MouseMove : null,
+  MouseMove,
+  _SessionDetailsGet : null,
+  SessionDetailsGet,
   _PageEventHandlerRegister : null,
   PageEventHandlerRegister,
 }
@@ -299,6 +401,16 @@ let Proto =
   PageSelectEval,
   _PageSelectFirstEval : null,
   PageSelectFirstEval,
+  _PageWaitForFunction : null,
+  PageWaitForFunction,
+  _ElementScreenshot : null,
+  ElementScreenshot,
+  _MouseClick : null,
+  MouseClick,
+  _MouseMove : null,
+  MouseMove,
+  _SessionDetailsGet : null,
+  SessionDetailsGet,
   _PageEventHandlerRegister : null,
   PageEventHandlerRegister,
 
