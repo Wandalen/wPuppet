@@ -2,7 +2,7 @@
   "name": "wpuppet",
   "version": "0.3.159",
   "description": "Browser puppet strategy",
-  "author": "Kostiantyn Wandalen <wanalen@01.school>",
+  "author": "Kostiantyn Wandalen <wandalen@obox.systems>",
   "license": "MIT",
   "main": "proto/node_modules/wpuppet",
   "files": [
