@@ -3,8 +3,8 @@ root:
   - wPuppet.out
 consistency:
   ../will.yml: &ref_0
-    hash: c29f6019e62ba26307a38358e36d281c
-    size: 6514
+    hash: 70bce5518ac97b12a659aabc4c5754bb
+    size: 6583
 module:
   wPuppet.out:
     about:
@@ -15,12 +15,12 @@ module:
       version: 0.4.0
       license: MIT
       npm.name: wpuppet
-      author: Kostiantyn Wandalen <wanalen@01.school>
+      author: Kostiantyn Wandalen <wandalen@obox.systems>
       keywords: &ref_1
         - tools
         - wTools
       contributors: &ref_2
-        - Kostiantyn Wandalen <wanalen@01.school>
+        - Kostiantyn Wandalen <wandalen@obox.systems>
       interpreters: &ref_3
         - njs >= 10.0.0
         - chrome >= 60.0.0
@@ -173,6 +173,7 @@ module:
           - ../proto/wtools/atop/puppet/l3/Window.s
           - ../proto/wtools/atop/puppet/l5_strategy
           - ../proto/wtools/atop/puppet/l5_strategy/Puppeteer.s
+          - ../proto/wtools/atop/puppet/l5_strategy/WebDriverIO.s
           - ../proto/wtools/atop/puppet/l9
           - ../proto/wtools/atop/puppet/l9/Namespace.s
           - ../proto/wtools/atop/puppet.test
@@ -211,6 +212,10 @@ module:
         enabled: 0
       puppeteer:
         path: 'npm:///puppeteer'
+        autoExporting: 0
+        enabled: 0
+      webdriverio:
+        path: 'npm:///webdriverio'
         autoExporting: 0
         enabled: 0
       wpuppet:
@@ -827,7 +832,7 @@ module:
       version: 0.4.0
       license: MIT
       npm.name: wpuppet
-      author: Kostiantyn Wandalen <wanalen@01.school>
+      author: Kostiantyn Wandalen <wandalen@obox.systems>
       keywords: *ref_1
       contributors: *ref_2
       interpreters: *ref_3
@@ -964,6 +969,10 @@ module:
         enabled: 0
       puppeteer:
         path: 'npm:///puppeteer'
+        autoExporting: 0
+        enabled: 0
+      webdriverio:
+        path: 'npm:///webdriverio'
         autoExporting: 0
         enabled: 0
       wpuppet:
@@ -1507,5 +1516,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: c29f6019e62ba26307a38358e36d281c
-        size: 6514
+        hash: 70bce5518ac97b12a659aabc4c5754bb
+        size: 6583
