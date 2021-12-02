@@ -214,6 +214,17 @@ function sessionDetailsGet()
 
 //
 
+function setViewport()
+{
+  let page = this;
+  let sys = page.system;
+  let strategy = sys.strategy;
+  _.assert( arguments.length >= 2 );
+  return strategy.SetViewport( page, ... arguments  );
+}
+
+//
+
 function _eventHandlerRegister( o )
 {
   let page = this;
@@ -301,6 +312,7 @@ let Proto =
   elementScreenshot,
 
   sessionDetailsGet,
+  setViewport,
 
   // event
 

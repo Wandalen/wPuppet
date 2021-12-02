@@ -293,6 +293,23 @@ function SessionDetailsGet( page )
 
 //
 
+function SetViewport( ... args )
+{ 
+  let page = args[ 0 ];
+  let sys = page.system;
+  let window = page.window;
+  let logger = sys.logger;
+
+  return _.Consequence.Try( () =>
+  {
+    _.assert( arguments.length >= 1 );
+
+    return this._SetViewport( ... args );
+  })
+}
+
+//
+
 function PageEventHandlerRegister( page, kind )
 {
   let sys = page.system;
@@ -362,6 +379,8 @@ let Statics =
   MouseMove,
   _SessionDetailsGet : null,
   SessionDetailsGet,
+  _SetViewport : null,
+  SetViewport,
   _PageEventHandlerRegister : null,
   PageEventHandlerRegister,
 }
@@ -411,6 +430,8 @@ let Proto =
   MouseMove,
   _SessionDetailsGet : null,
   SessionDetailsGet,
+  _SetViewport : null,
+  SetViewport,
   _PageEventHandlerRegister : null,
   PageEventHandlerRegister,
 

@@ -246,6 +246,18 @@ function _SessionDetailsGet( /* page, routine, ... args */ ... args )
 
 //
 
+function _SetViewport( /* page, routine, ... args */ ... args )
+{
+  let page = args[ 0 ];
+  let window = page.window;
+  let width = args[ 1 ];
+  let height = args[ 2 ];
+
+  return _.Consequence.From( window._handle.setWindowSize( width, height ) );
+}
+
+//
+
 function _PageEventHandlerRegister( page, kind )
 {
   let sys = page.system;
@@ -298,6 +310,7 @@ let Statics =
   _MouseClick,
   _MouseMove,
   _SessionDetailsGet,
+  _SetViewport,
   _PageEventHandlerRegister
 }
 
@@ -333,6 +346,7 @@ let Proto =
   _MouseClick,
   _MouseMove,
   _SessionDetailsGet,
+  _SetViewport,
   _PageEventHandlerRegister,
 
   // ident
