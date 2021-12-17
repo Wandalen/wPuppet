@@ -1,6 +1,6 @@
 {
   "name": "wpuppet",
-  "version": "0.3.161",
+  "version": "0.3.162",
   "description": "Browser puppet strategy",
   "author": "Kostiantyn Wandalen <wandalen@obox.systems>",
   "license": "MIT",
@@ -23,17 +23,17 @@
     "url": "https ://github.com/Wandalen/wPuppet/issues"
   },
   "dependencies": {
-    "wTools": "alpha",
-    "wprocess": "alpha",
-    "wLogger": "alpha",
-    "wFiles": "alpha",
-    "wEventHandler": "alpha",
-    "webdriverio": "7.16.10",
-    "wCopyable": "alpha",
-    "puppeteer": "12.0.1"
+    "wTools": "delta",
+    "wprocess": "delta",
+    "wLogger": "delta",
+    "wFiles": "delta",
+    "wEventHandler": "delta",
+    "webdriverio": "7.16.12",
+    "wCopyable": "delta",
+    "puppeteer": "13.0.0"
   },
   "devDependencies": {
-    "wTesting": "alpha",
+    "wTesting": "delta",
     "eslint": "7.32.0"
   },
   "keywords": [
