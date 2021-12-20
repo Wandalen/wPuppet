@@ -220,7 +220,7 @@ function setViewport()
   let sys = page.system;
   let strategy = sys.strategy;
   _.assert( arguments.length >= 2 );
-  return strategy.SetViewport( page, ... arguments  );
+  return strategy.SetViewport( page, ... arguments );
 }
 
 //
