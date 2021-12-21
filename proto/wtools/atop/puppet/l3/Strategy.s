@@ -158,6 +158,22 @@ function PageEval( page, routine, ... args )
 
 //
 
+function PageEvalAsync( page, routine, ... args )
+{
+  let sys = page.system;
+  let window = page.window;
+  let logger = sys.logger;
+
+  return _.Consequence.Try( () =>
+  {
+    _.assert( _.strIs( routine ) || _.routineIs( routine ) );
+    _.assert( arguments.length >= 2 );
+    return this._PageEvalAsync( page, routine, ... args );
+  })
+}
+
+//
+
 function PageSelectEval( /* page, selector, routine, ... args */ ... args )
 {
   let page = args[ 0 ];
@@ -365,6 +381,8 @@ let Statics =
 
   _PageEval : null,
   PageEval,
+  _PageEvalAsync : null,
+  PageEvalAsync,
   _PageSelectEval : null,
   PageSelectEval,
   _PageSelectFirstEval : null,
@@ -416,6 +434,8 @@ let Proto =
 
   _PageEval : null,
   PageEval,
+  _PageEvalAsync : null,
+  PageEvalAsync,
   _PageSelectEval : null,
   PageSelectEval,
   _PageSelectFirstEval : null,
