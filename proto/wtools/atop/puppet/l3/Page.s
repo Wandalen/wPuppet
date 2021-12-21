@@ -158,6 +158,17 @@ function eval_()
 
 //
 
+function evalAsync_()
+{
+  let page = this;
+  let sys = page.system;
+  let strategy = sys.strategy;
+  _.assert( arguments.length >= 1 );
+  return strategy.PageEvalAsync( page, ... arguments );
+}
+
+//
+
 function waitForFunction()
 {
   let page = this;
@@ -304,6 +315,7 @@ let Proto =
   selectFirstEval,
   eval : eval_,
   evaluate : eval_,
+  evaluateAsync : evalAsync_,
   waitForFunction,
 
   mouseClick,
