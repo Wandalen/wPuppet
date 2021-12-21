@@ -78,7 +78,7 @@ function _PageGoto( page, pagePath )
   page.pagePath = pagePath;
 
   return _.Consequence.Try( () =>
-  { 
+  {
     return window._handle.url( page.pagePath );
   })
 
@@ -123,10 +123,10 @@ function _PageEvalAsync( page, routine, ... args )
   let logger = sys.logger;
 
   return _.Consequence.Try( () =>
-  { 
+  {
     return window._handle.setTimeout({ script: 60000 });
   })
-  .then( () => 
+  .then( () =>
   {
     return window._handle.executeAsync( routine, ... args );
   })
@@ -180,11 +180,11 @@ function _PageWaitForFunction( /* page, routine, ... args */ ... args )
   let sys = page.system;
   let window = page.window;
   let logger = sys.logger;
-  
+
   return _.Consequence.Try( () =>
-  { 
-    
-    return window._handle.waitUntil( async () => 
+  {
+
+    return window._handle.waitUntil( async () =>
     {
       return await window._handle.execute( routine );
     }, ... args2 );
@@ -204,7 +204,7 @@ function _ElementScreenshot( /* page, routine, ... args */ ... args )
   let logger = sys.logger;
 
   return _.Consequence.From( window._handle.$( selector ) )
-  .then( ( element ) => 
+  .then( ( element ) =>
   {
     if( path )
     _.fileProvider.dirMakeForFile( path );
@@ -227,7 +227,7 @@ function _MouseClick( /* page, routine, ... args */ ... args )
   let logger = sys.logger;
 
   return _.Consequence.From( window._handle.$( element ) )
-  .then( ( element ) => 
+  .then( ( element ) =>
   {
     return element.click({ button : 0, x, y });
   })
@@ -247,7 +247,7 @@ function _MouseMove( /* page, routine, ... args */ ... args )
   let logger = sys.logger;
 
   return _.Consequence.From( window._handle.$( element ) )
-  .then( ( element ) => 
+  .then( ( element ) =>
   {
     return element.moveTo({ x, y });
   });

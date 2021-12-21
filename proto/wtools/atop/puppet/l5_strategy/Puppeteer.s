@@ -62,11 +62,11 @@ function _WindowUnform( window )
   {
     return window._handle.pages();
   })
-  .then( ( pages ) => 
+  .then( ( pages ) =>
   {
     return _.Consequence.And( ...pages.map( ( page ) => page.close() ) );
   })
-  .then( () => 
+  .then( () =>
   {
     let result = window._handle.close();
     if( result === undefined )
@@ -209,7 +209,7 @@ function _ElementScreenshot( /* page, routine, ... args */ ... args )
   let logger = sys.logger;
 
   return _.Consequence.From( page._handle.$( selector ) )
-  .then( ( element ) => 
+  .then( ( element ) =>
   {
     if( path )
     _.fileProvider.dirMakeForFile( path );

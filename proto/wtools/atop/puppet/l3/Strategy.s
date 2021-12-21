@@ -254,7 +254,7 @@ function ElementScreenshot( ... args )
 
     if( path )
     path = _.path.nativize( path );
-    
+
     return this._ElementScreenshot( page, selector, path );
   })
 }
@@ -310,7 +310,7 @@ function SessionDetailsGet( page )
 //
 
 function SetViewport( ... args )
-{ 
+{
   let page = args[ 0 ];
   let sys = page.system;
   let window = page.window;
