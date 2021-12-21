@@ -183,10 +183,9 @@ function _PageWaitForFunction( /* page, routine, ... args */ ... args )
 
   return _.Consequence.Try( () =>
   {
-
     return window._handle.waitUntil( async () =>
     {
-      return await window._handle.execute( routine );
+      return window._handle.execute( routine );
     }, ... args2 );
   })
 }
@@ -260,7 +259,7 @@ function _SessionDetailsGet( /* page, routine, ... args */ ... args )
   let page = args[ 0 ];
   let window = page.window;
   _.assert( window.browser === 'browserstack' );
-  return _.Consequence.From( window._handle.execute( `browserstack_executor: ${JSON.stringify({action: 'getSessionDetails'})}` ) );
+  return _.Consequence.From( window._handle.execute( `browserstack_executor: ${ JSON.stringify( { action : 'getSessionDetails' } ) }` ) );
 }
 
 //

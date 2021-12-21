@@ -36,8 +36,8 @@ function _WindowForm( window )
     let caps = encodeURIComponent( JSON.stringify( window.remoteConfig ) );
     let r = Puppeteer.connect
     ({
-      browserWSEndpoint: `wss://cdp.browserstack.com/puppeteer?caps=${caps}`,
-      defaultViewport: { width, height }
+      browserWSEndpoint : `wss://cdp.browserstack.com/puppeteer?caps=${caps}`,
+      defaultViewport : { width, height }
     });
     return r;
   }
@@ -45,8 +45,8 @@ function _WindowForm( window )
   let o2 = Object.create( null );
   o2.headless = !!window.headless;
   o2.product = window.browser || 'chrome';
-  o2.args = [ '--no-sandbox', '--enable-precise-memory-info', `--window-size=${ width },${ height }` ],
-  o2.defaultViewport = { width, height }
+  o2.args = [ '--no-sandbox', '--enable-precise-memory-info', `--window-size=${ width },${ height }` ];
+  o2.defaultViewport = { width, height };
 
   return Puppeteer.launch( o2 );
 }
@@ -64,7 +64,7 @@ function _WindowUnform( window )
   })
   .then( ( pages ) =>
   {
-    return _.Consequence.And( ...pages.map( ( page ) => page.close() ) );
+    return _.Consequence.And( ... pages.map( ( page ) => page.close() ) );
   })
   .then( () =>
   {
@@ -217,7 +217,7 @@ function _ElementScreenshot( /* page, routine, ... args */ ... args )
     return element.screenshot
     ({
       path,
-      omitBackground: true,
+      omitBackground : true,
     });
   })
 }
@@ -261,7 +261,7 @@ function _SessionDetailsGet( /* page, routine, ... args */ ... args )
 
   _.assert( window.browser === 'browserstack' );
 
-  let arg = `browserstack_executor: ${JSON.stringify({action: 'getSessionDetails'})}`;
+  let arg = `browserstack_executor: ${ JSON.stringify( { action : 'getSessionDetails' } ) }`;
   return _.Consequence.From( page._handle.evaluate( () => {}, arg ) )
 }
 
