@@ -124,7 +124,7 @@ function _PageEvalAsync( page, routine, ... args )
 
   return _.Consequence.Try( () =>
   {
-    return window._handle.setTimeout({ script: 60000 });
+    return window._handle.setTimeout({ script : 60000 });
   })
   .then( () =>
   {

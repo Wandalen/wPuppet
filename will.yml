@@ -282,9 +282,6 @@ submodule:
   wprocess:
     path: 'npm:///wprocess'
     enabled: 0
-  wCopyable:
-    path: 'npm:///wCopyable'
-    enabled: 0
   wLogger:
     path: 'npm:///wLogger'
     enabled: 0
@@ -294,24 +291,22 @@ submodule:
   wEventHandler:
     path: 'npm:///wEventHandler'
     enabled: 0
-  puppeteer:
-    path: 'npm:///puppeteer'
+  wCopyable:
+    path: 'npm:///wCopyable'
     enabled: 0
   webdriverio:
-    path: 'npm:///webdriverio'
+    path: 'npm:///webdriverio!7.16.13'
     enabled: 0
-  wpuppet:
-    path: 'hd://.'
+  puppeteer:
+    path: 'npm:///puppeteer!13.3.2'
     enabled: 0
-    criterion:
-      development: 1
   wTesting:
     path: 'npm:///wTesting'
     enabled: 0
     criterion:
       development: 1
   eslint:
-    path: 'npm:///eslint#7.1.0'
+    path: 'npm:///eslint!7.32.0'
     enabled: 0
     criterion:
       development: 1
