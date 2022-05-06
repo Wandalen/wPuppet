@@ -3,8 +3,8 @@ root:
   - wPuppet.out
 consistency:
   ../will.yml: &ref_0
-    hash: 70bce5518ac97b12a659aabc4c5754bb
-    size: 6583
+    hash: 733bd3ed544abc58aed7cf4dbc2ef25d
+    size: 6518
 module:
   wPuppet.out:
     about:
@@ -194,10 +194,6 @@ module:
         path: 'npm:///wprocess'
         autoExporting: 0
         enabled: 0
-      wCopyable:
-        path: 'npm:///wCopyable'
-        autoExporting: 0
-        enabled: 0
       wLogger:
         path: 'npm:///wLogger'
         autoExporting: 0
@@ -210,20 +206,18 @@ module:
         path: 'npm:///wEventHandler'
         autoExporting: 0
         enabled: 0
-      puppeteer:
-        path: 'npm:///puppeteer'
+      wCopyable:
+        path: 'npm:///wCopyable'
         autoExporting: 0
         enabled: 0
       webdriverio:
-        path: 'npm:///webdriverio'
+        path: 'npm:///webdriverio!7.16.13'
         autoExporting: 0
         enabled: 0
-      wpuppet:
-        path: 'hd://..'
+      puppeteer:
+        path: 'npm:///puppeteer!13.3.2'
         autoExporting: 0
         enabled: 0
-        criterion:
-          development: 1
       wTesting:
         path: 'npm:///wTesting'
         autoExporting: 0
@@ -231,7 +225,7 @@ module:
         criterion:
           development: 1
       eslint:
-        path: 'npm:///eslint#7.1.0'
+        path: 'npm:///eslint!7.32.0'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -951,10 +945,6 @@ module:
         path: 'npm:///wprocess'
         autoExporting: 0
         enabled: 0
-      wCopyable:
-        path: 'npm:///wCopyable'
-        autoExporting: 0
-        enabled: 0
       wLogger:
         path: 'npm:///wLogger'
         autoExporting: 0
@@ -967,20 +957,18 @@ module:
         path: 'npm:///wEventHandler'
         autoExporting: 0
         enabled: 0
-      puppeteer:
-        path: 'npm:///puppeteer'
+      wCopyable:
+        path: 'npm:///wCopyable'
         autoExporting: 0
         enabled: 0
       webdriverio:
-        path: 'npm:///webdriverio'
+        path: 'npm:///webdriverio!7.16.13'
         autoExporting: 0
         enabled: 0
-      wpuppet:
-        path: 'hd://.'
+      puppeteer:
+        path: 'npm:///puppeteer!13.3.2'
         autoExporting: 0
         enabled: 0
-        criterion:
-          development: 1
       wTesting:
         path: 'npm:///wTesting'
         autoExporting: 0
@@ -988,7 +976,7 @@ module:
         criterion:
           development: 1
       eslint:
-        path: 'npm:///eslint#7.1.0'
+        path: 'npm:///eslint!7.32.0'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -1516,5 +1504,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: 70bce5518ac97b12a659aabc4c5754bb
-        size: 6583
+        hash: 733bd3ed544abc58aed7cf4dbc2ef25d
+        size: 6518

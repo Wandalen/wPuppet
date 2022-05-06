@@ -1,6 +1,6 @@
 {
   "name": "wpuppet",
-  "version": "0.3.166",
+  "version": "0.3.167",
   "description": "Browser puppet strategy",
   "author": "Kostiantyn Wandalen <wandalen@obox.systems>",
   "license": "MIT",
@@ -28,8 +28,8 @@
     "wLogger": "",
     "wFiles": "",
     "wEventHandler": "",
-    "wCopyable": "",
     "webdriverio": "7.16.13",
+    "wCopyable": "",
     "puppeteer": "13.3.2"
   },
   "devDependencies": {
