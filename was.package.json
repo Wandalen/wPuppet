@@ -28,9 +28,9 @@
     "wLogger": "",
     "wFiles": "",
     "wEventHandler": "",
-    "webdriverio": "",
     "wCopyable": "",
-    "puppeteer": ""
+    "webdriverio": "7.16.13",
+    "puppeteer": "13.3.2"
   },
   "devDependencies": {
     "wTesting": "",
