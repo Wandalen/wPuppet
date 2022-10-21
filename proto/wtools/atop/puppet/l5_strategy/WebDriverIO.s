@@ -198,9 +198,7 @@ function _ElementScreenshot( /* page, routine, ... args */ ... args )
   let selector = args[ 1 ];
   let path = args[ 2 ];
 
-  let sys = page.system;
   let window = page.window;
-  let logger = sys.logger;
 
   return _.Consequence.From( window._handle.$( selector ) )
   .then( ( element ) =>

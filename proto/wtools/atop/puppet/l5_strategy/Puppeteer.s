@@ -204,21 +204,13 @@ function _ElementScreenshot( /* page, routine, ... args */ ... args )
   let selector = args[ 1 ];
   let path = args[ 2 ];
 
-  let sys = page.system;
-  let window = page.window;
-  let logger = sys.logger;
-
   return _.Consequence.From( page._handle.$( selector ) )
   .then( ( element ) =>
   {
     if( path )
     _.fileProvider.dirMakeForFile( path );
 
-    return element.screenshot
-    ({
-      path,
-      omitBackground : true,
-    });
+    return element.screenshot({ path });
   })
 }
 

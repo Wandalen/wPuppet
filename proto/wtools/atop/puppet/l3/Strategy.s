@@ -243,13 +243,9 @@ function ElementScreenshot( ... args )
   let selector = args[ 1 ];
   let path = args[ 2 ];
 
-  let sys = page.system;
-  let window = page.window;
-  let logger = sys.logger;
-
   return _.Consequence.Try( () =>
   {
-    _.assert( _.strIs( selector ), 'Element selector should be a string, got:', selector );
+    _.assert( _.str.is( selector ), 'Element selector should be a string, got: ', selector );
     _.assert( arguments.length >= 2 );
 
     if( path )
