@@ -182,6 +182,9 @@ module:
           - ../proto/wtools/atop/puppet.test/_assets/basic
           - ../proto/wtools/atop/puppet.test/_assets/basic/Index.html
           - ../proto/wtools/atop/puppet.test/_assets/basic/Index.js
+          - ../proto/wtools/atop/puppet.test/_assets/elementScreenshotTrivial
+          - >-
+            ../proto/wtools/atop/puppet.test/_assets/elementScreenshotTrivial/Index.html
           - ../proto/wtools/atop/puppet.test/_assets/puppeteerRaw
           - ../proto/wtools/atop/puppet.test/_assets/puppeteerRaw/Index.html
           - ../proto/wtools/atop/puppet.test/_assets/puppeteerRaw/Index.js
