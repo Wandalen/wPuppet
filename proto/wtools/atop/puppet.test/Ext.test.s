@@ -94,7 +94,6 @@ async function basic( test )
     test.exceptionReport({ err });
     await window.close();
   }
-
 }
 
 //
@@ -135,7 +134,42 @@ async function onConsole( test )
     test.exceptionReport({ err });
     await window.close();
   }
+}
 
+//
+
+async function elementScreenshotTrivial( test )
+{
+  const self = this;
+  const a = test.assetFor();
+  let window;
+
+  a.reflect();
+
+  try
+  {
+    window = await _.puppet.windowOpen({ headless : true });
+    const page = await window.pageOpen();
+
+    await page.goto( `file://${_.path.nativize( a.abs( 'Index.html' ) )}` );
+
+    test.case = 'no path';
+    await page.elementScreenshot( '.test' );
+    var files = a.fileProvider.dirRead( a.abs( '.' ) );
+    test.identical( files, [ 'Index.html' ] );
+
+    test.case = 'with path';
+    await page.elementScreenshot( '.test', a.abs( 'canvas.png' ) );
+    var files = a.fileProvider.dirRead( a.abs( '.' ) );
+    test.identical( files, [ 'canvas.png', 'Index.html' ] );
+
+    await window.close();
+  }
+  catch( err )
+  {
+    test.exceptionReport({ err });
+    await window.close();
+  }
 }
 
 //
@@ -173,7 +207,6 @@ async function puppeteerRaw( test )
     test.exceptionReport({ err });
     await window.close();
   }
-
 }
 
 // --
@@ -182,7 +215,6 @@ async function puppeteerRaw( test )
 
 const Proto =
 {
-
   name : 'Puppet.Ext',
   silencing : 1,
   enabled : 1,
@@ -199,14 +231,12 @@ const Proto =
 
   tests :
   {
-
     basic,
     onConsole,
+    elementScreenshotTrivial,
     puppeteerRaw,
-
   }
-
-}
+};
 
 const Self = wTestSuite( Proto );
 if( typeof module !== 'undefined' && !module.parent )
