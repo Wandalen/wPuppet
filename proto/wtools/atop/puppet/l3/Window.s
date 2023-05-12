@@ -133,7 +133,8 @@ let Composes =
   headless : 1,
   browser : null,
   dimensions : _.define.own([ 800, 600 ]),
-  remoteConfig : null
+  remoteConfig : null,
+  args : _.define.own([]),
 }
 
 let Aggregates =
